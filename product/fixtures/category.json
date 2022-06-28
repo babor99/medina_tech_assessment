@@ -1,0 +1,2144 @@
+[
+{
+    "model": "product.category",
+    "pk": 1,
+    "fields": {
+        "name": "Mobile",
+        "description": null,
+        "icon": "category/smartphone.svg",
+        "image": "category/real-mobile-2x-1400x770.png",
+        "parent": null,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-19T19:28:21.443Z",
+        "updated_at": "2021-10-19T19:28:21.459Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 2,
+    "fields": {
+        "name": "Huawei",
+        "description": "All kind of huawei",
+        "icon": "",
+        "image": "category/1008px-Huawei_Standard_logo.svg.png",
+        "parent": 1,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-19T19:30:40.212Z",
+        "updated_at": "2021-10-19T19:31:05.993Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 3,
+    "fields": {
+        "name": "Computer & laptop",
+        "description": null,
+        "icon": "category/laptop.svg",
+        "image": "category/computer-5509452_1280.png",
+        "parent": null,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-19T19:32:29.886Z",
+        "updated_at": "2021-10-19T19:32:29.901Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 4,
+    "fields": {
+        "name": "Health & beauty",
+        "description": null,
+        "icon": "category/beauty-products.svg",
+        "image": "category/beautiful-composition-cosmetics-on-wooden-260nw-1071476186.jpg",
+        "parent": null,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-19T19:37:38.619Z",
+        "updated_at": "2021-10-19T19:37:38.634Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 5,
+    "fields": {
+        "name": "Tools & accessories",
+        "description": null,
+        "icon": "category/star.svg",
+        "image": "category/_1527050801_99102.png",
+        "parent": null,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-19T19:50:26.705Z",
+        "updated_at": "2021-10-19T19:50:26.736Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 6,
+    "fields": {
+        "name": "Babies & toys",
+        "description": null,
+        "icon": "category/baby-boy.svg",
+        "image": "category/colorful-baby-toys-white-top-view-87584493.jpg",
+        "parent": null,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-19T19:51:24.067Z",
+        "updated_at": "2021-10-19T19:51:24.082Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 7,
+    "fields": {
+        "name": "Lifestyle",
+        "description": "available..",
+        "icon": "category/home.svg",
+        "image": "category/game.jpeg",
+        "parent": null,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-19T19:52:21.842Z",
+        "updated_at": "2021-10-28T15:19:24.713Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 8,
+    "fields": {
+        "name": "Sports & outdoor",
+        "description": null,
+        "icon": "category/gift-1.svg",
+        "image": "category/modern-sport-logo-collection_23-2147937779.jpg",
+        "parent": null,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-19T19:53:45.579Z",
+        "updated_at": "2021-10-19T19:53:45.595Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 9,
+    "fields": {
+        "name": "Iphone",
+        "description": null,
+        "icon": "",
+        "image": "category/iphone.png",
+        "parent": 1,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-19T20:02:45.442Z",
+        "updated_at": "2021-10-20T09:44:39.623Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 10,
+    "fields": {
+        "name": "Automotive & motorbike",
+        "description": null,
+        "icon": "category/motorbike.svg",
+        "image": "category/bike.jpg",
+        "parent": null,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-19T20:04:29.286Z",
+        "updated_at": "2021-10-19T20:04:29.317Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 12,
+    "fields": {
+        "name": "Camera And Photography",
+        "description": "xyz",
+        "icon": "",
+        "image": "category/camera.png",
+        "parent": null,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T05:44:17.357Z",
+        "updated_at": "2021-11-13T12:42:43.145Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 13,
+    "fields": {
+        "name": "Yamaha",
+        "description": null,
+        "icon": "",
+        "image": "category/yamaha_logo.jpg",
+        "parent": 10,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T05:49:23.842Z",
+        "updated_at": "2021-10-20T05:49:23.857Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 14,
+    "fields": {
+        "name": "Honda",
+        "description": null,
+        "icon": "",
+        "image": "category/honda_logo.jpg",
+        "parent": 10,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T05:50:03.326Z",
+        "updated_at": "2021-10-20T05:50:03.357Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 15,
+    "fields": {
+        "name": "Tvs",
+        "description": null,
+        "icon": "",
+        "image": "category/TVS_logo.png",
+        "parent": 10,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T05:50:40.045Z",
+        "updated_at": "2021-10-20T05:50:40.076Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 16,
+    "fields": {
+        "name": "Suzuki",
+        "description": null,
+        "icon": "",
+        "image": "category/suzuki_logo.png",
+        "parent": 10,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T05:51:21.232Z",
+        "updated_at": "2021-10-20T05:51:21.248Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 17,
+    "fields": {
+        "name": "Bajaj",
+        "description": null,
+        "icon": "",
+        "image": "category/bajaj_logo.png",
+        "parent": 10,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T05:52:28.857Z",
+        "updated_at": "2021-10-20T05:52:28.873Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 18,
+    "fields": {
+        "name": "Sony",
+        "description": null,
+        "icon": "",
+        "image": "category/sony_logo_M9HNeXA.png",
+        "parent": 12,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T05:55:46.357Z",
+        "updated_at": "2021-10-27T11:56:42.143Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 19,
+    "fields": {
+        "name": "Canon",
+        "description": null,
+        "icon": "",
+        "image": "category/Canon.png",
+        "parent": 12,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T05:57:28.420Z",
+        "updated_at": "2021-10-20T06:23:52.404Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 20,
+    "fields": {
+        "name": "Nikon",
+        "description": null,
+        "icon": "",
+        "image": "category/Nikon.jpg",
+        "parent": 12,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T06:00:38.076Z",
+        "updated_at": "2021-10-20T06:26:13.810Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 22,
+    "fields": {
+        "name": "Samsung",
+        "description": null,
+        "icon": "",
+        "image": "category/Samsung.png",
+        "parent": 12,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T06:16:45.044Z",
+        "updated_at": "2021-10-20T06:31:49.013Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 23,
+    "fields": {
+        "name": "Panasonic",
+        "description": null,
+        "icon": "",
+        "image": "category/Panasonic.jpg",
+        "parent": 12,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T06:22:13.826Z",
+        "updated_at": "2021-10-20T06:22:13.888Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 24,
+    "fields": {
+        "name": "Oppo",
+        "description": null,
+        "icon": "",
+        "image": "category/oppo.png",
+        "parent": 1,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T09:45:11.154Z",
+        "updated_at": "2021-10-20T09:45:11.169Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 25,
+    "fields": {
+        "name": "Oneplus",
+        "description": null,
+        "icon": "",
+        "image": "category/one_plus.png",
+        "parent": 1,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T09:45:44.857Z",
+        "updated_at": "2021-10-20T09:45:44.873Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 26,
+    "fields": {
+        "name": "Xiaomi",
+        "description": null,
+        "icon": "",
+        "image": "category/xiaomi.png",
+        "parent": 1,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T09:46:10.654Z",
+        "updated_at": "2021-10-20T09:46:10.685Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 27,
+    "fields": {
+        "name": "Samsung",
+        "description": null,
+        "icon": "",
+        "image": "category/samsung_XDkErSO.png",
+        "parent": 1,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T09:47:27.216Z",
+        "updated_at": "2021-10-20T09:47:27.232Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 28,
+    "fields": {
+        "name": "Acer",
+        "description": null,
+        "icon": "",
+        "image": "category/acer.png",
+        "parent": 3,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T13:30:09.637Z",
+        "updated_at": "2021-10-20T13:30:09.652Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 29,
+    "fields": {
+        "name": "Asus",
+        "description": null,
+        "icon": "",
+        "image": "category/Asus_logo.png",
+        "parent": 3,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T13:30:41.606Z",
+        "updated_at": "2021-10-20T13:30:41.621Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 30,
+    "fields": {
+        "name": "Dell",
+        "description": null,
+        "icon": "",
+        "image": "category/Download-DELL-logo-vector.jpg",
+        "parent": 3,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T13:31:21.137Z",
+        "updated_at": "2021-10-20T13:31:21.168Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 31,
+    "fields": {
+        "name": "Hp",
+        "description": null,
+        "icon": "",
+        "image": "category/hp_logo.png",
+        "parent": 3,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T13:32:05.684Z",
+        "updated_at": "2021-10-20T13:32:05.715Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 32,
+    "fields": {
+        "name": "Lenovo",
+        "description": null,
+        "icon": "",
+        "image": "category/Lenovo_Logo_2015.png",
+        "parent": 3,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-20T13:32:56.856Z",
+        "updated_at": "2021-10-20T13:32:56.887Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 36,
+    "fields": {
+        "name": "Watch",
+        "description": "available",
+        "icon": "",
+        "image": "category/watch_logo.jpg",
+        "parent": 7,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": true,
+        "created_at": "2021-10-26T09:26:26.471Z",
+        "updated_at": "2021-11-08T05:14:47.283Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 38,
+    "fields": {
+        "name": "Naviforce",
+        "description": "available",
+        "icon": "",
+        "image": "category/logo.jpg",
+        "parent": 36,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-10-26T09:32:44.181Z",
+        "updated_at": "2021-10-26T09:32:44.306Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 39,
+    "fields": {
+        "name": "Megir",
+        "description": "available",
+        "icon": "",
+        "image": "category/logo_pUIdiEr.jpg",
+        "parent": 36,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T11:22:24.718Z",
+        "updated_at": "2021-10-27T11:23:12.781Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 42,
+    "fields": {
+        "name": "Home appliance",
+        "description": null,
+        "icon": "",
+        "image": "category/home_appliances_logo.jpg",
+        "parent": null,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T11:41:47.548Z",
+        "updated_at": "2021-10-27T11:41:47.564Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 43,
+    "fields": {
+        "name": "Samsung",
+        "description": null,
+        "icon": "",
+        "image": "category/samsang_logo_3JSdvPU.png",
+        "parent": 62,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T11:42:50.470Z",
+        "updated_at": "2021-10-27T15:17:58.348Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 44,
+    "fields": {
+        "name": "Lg",
+        "description": null,
+        "icon": "",
+        "image": "category/lg_logo.png",
+        "parent": 62,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T11:45:37.798Z",
+        "updated_at": "2021-10-27T15:11:20.395Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 48,
+    "fields": {
+        "name": "Sony",
+        "description": null,
+        "icon": "",
+        "image": "category/logo_VvB56RS.jpg",
+        "parent": 62,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T11:59:14.690Z",
+        "updated_at": "2021-10-27T15:21:32.692Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 49,
+    "fields": {
+        "name": "Walton",
+        "description": null,
+        "icon": "",
+        "image": "category/walton_logo.jpg",
+        "parent": 62,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T12:04:15.722Z",
+        "updated_at": "2021-10-27T15:24:34.943Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 50,
+    "fields": {
+        "name": "Skmei",
+        "description": "adad",
+        "icon": "",
+        "image": "category/logo.webp",
+        "parent": 36,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T12:07:31.285Z",
+        "updated_at": "2021-10-27T12:07:31.316Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 51,
+    "fields": {
+        "name": "Xiaomi",
+        "description": "adadd",
+        "icon": "",
+        "image": "category/xiaomi_gaVcpX0.png",
+        "parent": 36,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T12:08:19.769Z",
+        "updated_at": "2021-10-27T12:08:19.785Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 55,
+    "fields": {
+        "name": "Singer",
+        "description": null,
+        "icon": "",
+        "image": "category/Singer_logo.png",
+        "parent": 62,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T13:32:35.386Z",
+        "updated_at": "2021-10-27T15:19:00.005Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 56,
+    "fields": {
+        "name": "Backpack",
+        "description": "new backpack",
+        "icon": "",
+        "image": "category/bag_logo.jpg",
+        "parent": 7,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": true,
+        "created_at": "2021-10-27T13:37:28.981Z",
+        "updated_at": "2021-11-08T05:15:00.048Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 57,
+    "fields": {
+        "name": "Fastrack",
+        "description": "new brand",
+        "icon": "",
+        "image": "category/logo.png",
+        "parent": 56,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T13:38:35.903Z",
+        "updated_at": "2021-10-27T13:38:35.918Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 58,
+    "fields": {
+        "name": "President",
+        "description": "new brand",
+        "icon": "",
+        "image": "category/logo.jpeg",
+        "parent": 56,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T13:39:09.621Z",
+        "updated_at": "2021-10-27T13:39:09.653Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 59,
+    "fields": {
+        "name": "Max",
+        "description": "new brand",
+        "icon": "",
+        "image": "category/logo_pVUiGfZ.png",
+        "parent": 56,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T13:40:02.950Z",
+        "updated_at": "2021-10-27T13:40:02.965Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 60,
+    "fields": {
+        "name": "Wilson",
+        "description": "new brand",
+        "icon": "",
+        "image": "category/logo_UWLlm8o.png",
+        "parent": 56,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T13:40:40.778Z",
+        "updated_at": "2021-10-27T13:40:40.793Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 61,
+    "fields": {
+        "name": "Xiaomi",
+        "description": "new brand",
+        "icon": "",
+        "image": "category/xiaomi_IzsZGbE.png",
+        "parent": 56,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T13:41:09.122Z",
+        "updated_at": "2021-10-27T13:41:09.137Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 62,
+    "fields": {
+        "name": "Tv",
+        "description": null,
+        "icon": "",
+        "image": "category/tv_logo.jpg",
+        "parent": 42,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": true,
+        "created_at": "2021-10-27T14:53:05.753Z",
+        "updated_at": "2021-11-08T04:47:42.092Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 63,
+    "fields": {
+        "name": "Fridge",
+        "description": null,
+        "icon": "",
+        "image": "category/fridge_logo.jpg",
+        "parent": 42,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": true,
+        "created_at": "2021-10-27T15:27:24.177Z",
+        "updated_at": "2021-11-08T04:47:14.872Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 64,
+    "fields": {
+        "name": "Kelvinator",
+        "description": null,
+        "icon": "",
+        "image": "category/kelvinator_logo_EPcgQRh.jfif",
+        "parent": 63,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T15:28:40.162Z",
+        "updated_at": "2021-10-27T15:28:40.193Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 65,
+    "fields": {
+        "name": "Panasonic",
+        "description": null,
+        "icon": "",
+        "image": "category/panasonic_logo_vnQv9E5.png",
+        "parent": 63,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T15:30:58.771Z",
+        "updated_at": "2021-10-27T15:30:58.787Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 66,
+    "fields": {
+        "name": "Singer",
+        "description": null,
+        "icon": "",
+        "image": "category/Singer_logo_E187OcZ.png",
+        "parent": 63,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T15:31:45.506Z",
+        "updated_at": "2021-10-27T15:31:45.521Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 67,
+    "fields": {
+        "name": "Walton",
+        "description": null,
+        "icon": "",
+        "image": "category/walton_logo_KmSPyH2.jpg",
+        "parent": 63,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T15:32:49.037Z",
+        "updated_at": "2021-10-27T15:32:49.068Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 68,
+    "fields": {
+        "name": "Samsung",
+        "description": null,
+        "icon": "",
+        "image": "category/samsang_logo_CkUZcCf.png",
+        "parent": 63,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T15:33:42.694Z",
+        "updated_at": "2021-10-27T15:33:42.709Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 69,
+    "fields": {
+        "name": "Air Conditioner",
+        "description": null,
+        "icon": "",
+        "image": "category/air_conditioner_logo.jpg",
+        "parent": 42,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": true,
+        "created_at": "2021-10-27T15:35:13.303Z",
+        "updated_at": "2021-11-08T04:44:01.851Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 70,
+    "fields": {
+        "name": "Kelvinator",
+        "description": null,
+        "icon": "",
+        "image": "category/kelvinator_logo_5GcelZH.jfif",
+        "parent": 69,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T15:36:48.788Z",
+        "updated_at": "2021-10-27T15:36:48.803Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 72,
+    "fields": {
+        "name": "Walton",
+        "description": null,
+        "icon": "",
+        "image": "category/walton_logo_9CdDoA9.jpg",
+        "parent": 69,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T15:40:07.725Z",
+        "updated_at": "2021-10-27T15:40:07.741Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 73,
+    "fields": {
+        "name": "Hitachi",
+        "description": null,
+        "icon": "",
+        "image": "category/hitachi_logo_PuQDMUI.png",
+        "parent": 69,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T15:40:49.913Z",
+        "updated_at": "2021-10-27T15:40:49.928Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 74,
+    "fields": {
+        "name": "Panasonic",
+        "description": null,
+        "icon": "",
+        "image": "category/panasonic_logo_BMZyS3m.png",
+        "parent": 69,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-27T15:41:30.679Z",
+        "updated_at": "2021-10-27T15:41:30.694Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 75,
+    "fields": {
+        "name": "Cycling",
+        "description": "ff gefdvg dfgrg",
+        "icon": "",
+        "image": "category/cycling.jpeg",
+        "parent": 8,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T05:35:09.469Z",
+        "updated_at": "2021-11-08T05:14:35.189Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 76,
+    "fields": {
+        "name": "Fitness",
+        "description": "be cool",
+        "icon": "",
+        "image": "category/fitness.jpeg",
+        "parent": 8,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T05:36:53.055Z",
+        "updated_at": "2021-11-08T05:14:24.080Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 77,
+    "fields": {
+        "name": "Sports Equipment",
+        "description": "heavy",
+        "icon": "",
+        "image": "category/sportsssss.jpg",
+        "parent": 8,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T05:40:18.571Z",
+        "updated_at": "2021-11-08T05:13:20.302Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 78,
+    "fields": {
+        "name": "Adult cycles",
+        "description": "for adult",
+        "icon": "",
+        "image": "category/adult_logo.jpeg",
+        "parent": 75,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T05:43:00.890Z",
+        "updated_at": "2021-10-28T05:46:22.266Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 79,
+    "fields": {
+        "name": "Kid's cycles",
+        "description": "for kids",
+        "icon": "",
+        "image": "category/kids_logo.jpeg",
+        "parent": 75,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T05:43:58.849Z",
+        "updated_at": "2021-10-28T05:46:08.656Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 80,
+    "fields": {
+        "name": "Hybrid cycles",
+        "description": "hybrid",
+        "icon": "",
+        "image": "category/hybrid.jpeg",
+        "parent": 75,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T05:48:15.802Z",
+        "updated_at": "2021-10-28T05:48:15.818Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 81,
+    "fields": {
+        "name": "Hand strengtheners",
+        "description": "gym",
+        "icon": "",
+        "image": "category/hand.jpg",
+        "parent": 76,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T06:27:27.957Z",
+        "updated_at": "2021-10-28T06:27:28.004Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 82,
+    "fields": {
+        "name": "Pull-up and push-up bars",
+        "description": "gym",
+        "icon": "",
+        "image": "category/pull-up-bar-500x500.jpg",
+        "parent": 76,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T06:29:15.462Z",
+        "updated_at": "2021-10-28T06:29:15.494Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 83,
+    "fields": {
+        "name": "Benches",
+        "description": "gym",
+        "icon": "",
+        "image": "category/bench.jpg",
+        "parent": 76,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T06:31:21.720Z",
+        "updated_at": "2021-10-28T06:31:21.736Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 84,
+    "fields": {
+        "name": "Gree",
+        "description": null,
+        "icon": "",
+        "image": "category/gree_logo.png",
+        "parent": 69,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T12:29:28.503Z",
+        "updated_at": "2021-10-28T12:29:28.520Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 85,
+    "fields": {
+        "name": "Football",
+        "description": "dddd",
+        "icon": "",
+        "image": "category/football_logo.jpg",
+        "parent": 77,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T13:08:21.535Z",
+        "updated_at": "2021-10-28T13:08:21.559Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 86,
+    "fields": {
+        "name": "Badminton",
+        "description": "winter",
+        "icon": "",
+        "image": "category/bad_logo.jpg",
+        "parent": 77,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T13:08:57.006Z",
+        "updated_at": "2021-10-28T15:12:17.994Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 87,
+    "fields": {
+        "name": "Cricket",
+        "description": "ddddd",
+        "icon": "",
+        "image": "category/crcik_logo.jpg",
+        "parent": 77,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T13:09:48.143Z",
+        "updated_at": "2021-10-28T15:11:51.150Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 88,
+    "fields": {
+        "name": "Washing Machine",
+        "description": null,
+        "icon": "",
+        "image": "category/wahing_machine.jpg",
+        "parent": 42,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": true,
+        "created_at": "2021-10-28T14:43:37.105Z",
+        "updated_at": "2021-11-08T04:47:31.282Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 89,
+    "fields": {
+        "name": "Samsung",
+        "description": null,
+        "icon": "",
+        "image": "category/samsang_logo_bniwm8P.png",
+        "parent": 88,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T14:46:25.539Z",
+        "updated_at": "2021-10-28T14:46:25.554Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 90,
+    "fields": {
+        "name": "Singer",
+        "description": null,
+        "icon": "",
+        "image": "category/Singer_logo_Q479oOL.png",
+        "parent": 88,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T14:47:57.054Z",
+        "updated_at": "2021-10-28T14:47:57.086Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 91,
+    "fields": {
+        "name": "Walton",
+        "description": null,
+        "icon": "",
+        "image": "category/walton_logo_Mplt1cm.jpg",
+        "parent": 88,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T14:49:15.179Z",
+        "updated_at": "2021-10-28T14:49:15.226Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 92,
+    "fields": {
+        "name": "Hitachi",
+        "description": null,
+        "icon": "",
+        "image": "category/hitachi_logo_vjswXTI.png",
+        "parent": 88,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T14:50:06.930Z",
+        "updated_at": "2021-10-28T14:50:06.945Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 93,
+    "fields": {
+        "name": "Lg",
+        "description": null,
+        "icon": "",
+        "image": "category/lg_logo_ooRiexw.png",
+        "parent": 88,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T14:51:16.523Z",
+        "updated_at": "2021-10-28T14:51:16.539Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 94,
+    "fields": {
+        "name": "Sunglass",
+        "description": "ddd",
+        "icon": "",
+        "image": "category/sunglass_logo.jpg",
+        "parent": 7,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T14:53:16.102Z",
+        "updated_at": "2021-10-28T15:14:17.916Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 95,
+    "fields": {
+        "name": "Rayban",
+        "description": "fashion",
+        "icon": "",
+        "image": "category/logo_B9xUlcc.jpg",
+        "parent": 94,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T15:16:22.635Z",
+        "updated_at": "2021-10-28T15:16:22.666Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 96,
+    "fields": {
+        "name": "Armani",
+        "description": "fashion",
+        "icon": "",
+        "image": "category/emporio_armani_logo.jpg",
+        "parent": 94,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T15:16:57.744Z",
+        "updated_at": "2021-10-28T15:16:57.760Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 97,
+    "fields": {
+        "name": "Police",
+        "description": "fashion",
+        "icon": "",
+        "image": "category/Police-Sunglasses-Logo.jpg",
+        "parent": 94,
+        "is_active": true,
+        "is_top_category": true,
+        "show_on_homepage": false,
+        "created_at": "2021-10-28T15:17:26.869Z",
+        "updated_at": "2021-10-29T05:39:13.499Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 98,
+    "fields": {
+        "name": "Baby Dolls",
+        "description": "all kind of baby dolls",
+        "icon": "",
+        "image": "category/16614_grande_1.jpg",
+        "parent": 6,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-09T05:50:07.871Z",
+        "updated_at": "2021-11-09T05:50:07.902Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 99,
+    "fields": {
+        "name": "Hair Oil",
+        "description": null,
+        "icon": "",
+        "image": "category/sddefault.jpg",
+        "parent": 4,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-16T04:04:21.030Z",
+        "updated_at": "2021-11-16T04:04:21.123Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 100,
+    "fields": {
+        "name": "Vatika",
+        "description": null,
+        "icon": "",
+        "image": "category/download.jfif",
+        "parent": 99,
+        "is_active": true,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-16T04:05:35.686Z",
+        "updated_at": "2021-11-16T04:05:35.702Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 101,
+    "fields": {
+        "name": "Face Wash",
+        "description": null,
+        "icon": "",
+        "image": "category/himalaya-men-pimple-clear-neem-face-wash_1024x1024.jpg",
+        "parent": 4,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-16T06:30:14.700Z",
+        "updated_at": "2021-11-16T06:31:34.419Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 102,
+    "fields": {
+        "name": "Dove",
+        "description": null,
+        "icon": "",
+        "image": "category/dove-baby-oil-500x500.jpg",
+        "parent": 99,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-16T12:26:10.341Z",
+        "updated_at": "2021-11-16T12:26:10.356Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 103,
+    "fields": {
+        "name": "Love Oil",
+        "description": null,
+        "icon": "",
+        "image": "category/download.jpg",
+        "parent": 102,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-16T13:14:23.738Z",
+        "updated_at": "2021-11-16T13:14:23.785Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 104,
+    "fields": {
+        "name": "Love",
+        "description": null,
+        "icon": "",
+        "image": "",
+        "parent": 99,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-17T04:52:29.267Z",
+        "updated_at": "2021-11-17T04:52:29.282Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 105,
+    "fields": {
+        "name": "Dabur Amla",
+        "description": null,
+        "icon": "",
+        "image": "category/download_j7VofQ7.jpg",
+        "parent": 99,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-17T05:57:21.194Z",
+        "updated_at": "2021-11-17T05:57:21.210Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 106,
+    "fields": {
+        "name": "Parachute",
+        "description": null,
+        "icon": "",
+        "image": "category/images.jpg",
+        "parent": 99,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-17T07:10:42.246Z",
+        "updated_at": "2021-11-17T07:10:42.277Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 107,
+    "fields": {
+        "name": "Garnier Man",
+        "description": null,
+        "icon": "",
+        "image": "category/1214114-2_1-garnier-men-oil-clear-face-wash-for-oily-skin.jpg",
+        "parent": 101,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-17T07:45:32.686Z",
+        "updated_at": "2021-11-17T07:45:32.717Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 108,
+    "fields": {
+        "name": "Nivea Man",
+        "description": null,
+        "icon": "",
+        "image": "category/150-purifying-face-wash-nivea-original-imaezn3hdtehfzpy.jpeg",
+        "parent": 101,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-17T07:53:14.077Z",
+        "updated_at": "2021-11-17T07:53:14.109Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 109,
+    "fields": {
+        "name": "Pond'S",
+        "description": null,
+        "icon": "",
+        "image": "category/41GQs--qNhL.jpg",
+        "parent": 101,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-17T09:43:42.990Z",
+        "updated_at": "2021-11-17T09:43:43.006Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 110,
+    "fields": {
+        "name": "Dove",
+        "description": null,
+        "icon": "",
+        "image": "category/download_w5uWpPV.jpg",
+        "parent": 101,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-17T10:43:17.248Z",
+        "updated_at": "2021-11-17T10:43:17.263Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 111,
+    "fields": {
+        "name": "Himalaya",
+        "description": null,
+        "icon": "",
+        "image": "category/HimalayaHerbalsFairnessKesarFaceWash3.jpg",
+        "parent": 101,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-17T11:12:21.578Z",
+        "updated_at": "2021-11-17T11:12:21.609Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 119,
+    "fields": {
+        "name": "Dove Face Cream",
+        "description": null,
+        "icon": "",
+        "image": "category/8717163476789-_150ml-823832-png.png",
+        "parent": 4,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-21T12:02:17.800Z",
+        "updated_at": "2021-11-21T12:02:17.816Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 120,
+    "fields": {
+        "name": "Garnier",
+        "description": null,
+        "icon": "",
+        "image": "category/Garnier-Skin-Natural-Ultra-Lift-Night-Cream-50Ml...jpg",
+        "parent": 4,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-22T12:24:21.516Z",
+        "updated_at": "2021-11-22T12:24:21.532Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 121,
+    "fields": {
+        "name": "Face Cream",
+        "description": null,
+        "icon": "",
+        "image": "category/nivea-for-men-moisturising-face-care-cream-1479-157-0075_1_1.jpg",
+        "parent": 4,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-23T04:56:52.179Z",
+        "updated_at": "2021-11-23T05:59:35.442Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 122,
+    "fields": {
+        "name": "Nivea",
+        "description": null,
+        "icon": "",
+        "image": "",
+        "parent": 121,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-23T07:02:46.362Z",
+        "updated_at": "2021-11-23T07:02:46.393Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 123,
+    "fields": {
+        "name": "Fair & Lovely",
+        "description": null,
+        "icon": "",
+        "image": "",
+        "parent": 121,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-23T08:01:26.492Z",
+        "updated_at": "2021-11-23T08:01:26.523Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 124,
+    "fields": {
+        "name": "Pond'S",
+        "description": null,
+        "icon": "",
+        "image": "",
+        "parent": 121,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-23T10:39:18.699Z",
+        "updated_at": "2021-11-23T10:39:18.715Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 125,
+    "fields": {
+        "name": "Body Lotion",
+        "description": null,
+        "icon": "",
+        "image": "category/images_iuJI7oC.jpg",
+        "parent": 4,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-23T12:13:35.073Z",
+        "updated_at": "2021-11-23T12:13:35.105Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 126,
+    "fields": {
+        "name": "Pond'S",
+        "description": null,
+        "icon": "",
+        "image": "category/products_456557_image_B483_125172439.jpg",
+        "parent": 125,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-23T12:17:30.293Z",
+        "updated_at": "2021-11-23T12:17:30.324Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 127,
+    "fields": {
+        "name": "Dove",
+        "description": null,
+        "icon": "",
+        "image": "category/640x640.jpg",
+        "parent": 125,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-30T04:21:59.596Z",
+        "updated_at": "2021-11-30T04:21:59.613Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 128,
+    "fields": {
+        "name": "Love",
+        "description": null,
+        "icon": "",
+        "image": "category/1240389_updated-2341237-png.webp",
+        "parent": 125,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-30T05:58:05.071Z",
+        "updated_at": "2021-11-30T05:58:05.105Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 129,
+    "fields": {
+        "name": "Nivea",
+        "description": null,
+        "icon": "",
+        "image": "category/download_aUB1BgJ.jpg",
+        "parent": 125,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-30T09:51:09.516Z",
+        "updated_at": "2021-11-30T09:51:09.547Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 130,
+    "fields": {
+        "name": "Vaseline",
+        "description": null,
+        "icon": "",
+        "image": "category/81P5rO5t-L._SL1500_.jpg",
+        "parent": 125,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-11-30T12:11:40.607Z",
+        "updated_at": "2021-11-30T12:11:40.622Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 131,
+    "fields": {
+        "name": "Shampoo",
+        "description": null,
+        "icon": "",
+        "image": "category/images_PImDCEq.jpg",
+        "parent": 4,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-12-01T07:05:13.564Z",
+        "updated_at": "2021-12-01T07:07:36.518Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 132,
+    "fields": {
+        "name": "Head & Shoulders",
+        "description": null,
+        "icon": "",
+        "image": "category/download_YfEmBrf.jpg",
+        "parent": 131,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-12-01T07:14:04.596Z",
+        "updated_at": "2021-12-01T07:14:04.612Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 133,
+    "fields": {
+        "name": "Dove",
+        "description": null,
+        "icon": "",
+        "image": "category/8901030501067-838792-jpg.jpg.ulenscale.460x460.webp",
+        "parent": 131,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-12-01T12:03:39.557Z",
+        "updated_at": "2021-12-01T12:03:39.573Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 134,
+    "fields": {
+        "name": "Pantene",
+        "description": null,
+        "icon": "",
+        "image": "category/5c95feb131217f99ffd3ee1c5d2f0d1a_Ts9Ex54.jpg",
+        "parent": 131,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-12-02T09:33:01.789Z",
+        "updated_at": "2021-12-02T09:34:18.414Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 135,
+    "fields": {
+        "name": "Johnson'S",
+        "description": null,
+        "icon": "",
+        "image": "category/johnsons-clean-fresh-shampoo-front_1.jpg",
+        "parent": 131,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-12-05T04:57:19.934Z",
+        "updated_at": "2021-12-05T05:00:18.810Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 136,
+    "fields": {
+        "name": "Sunsilk",
+        "description": null,
+        "icon": "",
+        "image": "category/sunsilk_shampoo_perfect_straight_180ml.png",
+        "parent": 131,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-12-05T10:20:05.524Z",
+        "updated_at": "2021-12-05T10:20:05.540Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 137,
+    "fields": {
+        "name": "Bear Doll",
+        "description": null,
+        "icon": "",
+        "image": "category/9d65211d866102de5c31276d1f1ea653.jpg",
+        "parent": 6,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-12-13T09:29:12.203Z",
+        "updated_at": "2021-12-13T09:41:27.377Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 138,
+    "fields": {
+        "name": "Bears Doll Mairceantile",
+        "description": null,
+        "icon": "",
+        "image": "category/1394ust-250x250_1.jpg",
+        "parent": 137,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-12-15T06:01:46.917Z",
+        "updated_at": "2021-12-15T06:01:46.948Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 139,
+    "fields": {
+        "name": "Teddy Bear  Dolls & Co",
+        "description": null,
+        "icon": "",
+        "image": "category/aurora-toy-eco-plush-animal-polar-bear_2.png",
+        "parent": 137,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-12-15T10:40:34.386Z",
+        "updated_at": "2021-12-15T10:40:34.420Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 140,
+    "fields": {
+        "name": "Bear Dolls Anonymous",
+        "description": null,
+        "icon": "",
+        "image": "category/download_pnvxeKI.jpg",
+        "parent": 137,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-12-20T10:44:45.172Z",
+        "updated_at": "2021-12-20T10:44:45.225Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+},
+{
+    "model": "product.category",
+    "pk": 141,
+    "fields": {
+        "name": "Lego Bear Dolls",
+        "description": null,
+        "icon": "",
+        "image": "category/istockphoto-458713169-612x612.jpg",
+        "parent": 137,
+        "is_active": false,
+        "is_top_category": false,
+        "show_on_homepage": false,
+        "created_at": "2021-12-21T06:20:26.778Z",
+        "updated_at": "2021-12-21T06:20:26.796Z",
+        "created_by": 1,
+        "updated_by": 1
+    }
+}
+]
