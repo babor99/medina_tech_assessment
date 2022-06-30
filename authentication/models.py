@@ -11,6 +11,103 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 
+# models goes here..
+
+class Country(models.Model):
+	name = models.CharField(max_length=50)
+	code = models.CharField(max_length=3, null=True, blank=True)
+	phone = models.CharField(max_length=10, null=True, blank=True)
+
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True)
+
+	created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+	updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+
+	class Meta:
+		verbose_name_plural = 'Countries'
+		ordering = ('-id',)
+
+	def __str__(self):
+		return self.name
+	
+	def save(self, *args, **kwargs):
+		self.name = self.name.capitalize()
+		super().save(*args, **kwargs)
+
+
+
+
+class City(models.Model):
+	name = models.CharField(max_length=50)
+
+	country = models.ForeignKey(Country, on_delete= models.RESTRICT, related_name='cities')
+
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True)
+
+	created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+	updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+
+	class Meta:
+		verbose_name_plural = 'Cities'
+		ordering = ('-id', )
+
+	def __str__(self):
+		return self.name
+	
+	def save(self, *args, **kwargs):
+		self.name = self.name.capitalize()
+		super().save(*args, **kwargs)
+
+
+
+
+class Permission(models.Model):
+	name = models.CharField(max_length=255)
+
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True)
+
+	created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+	updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+
+	class Meta:
+		ordering = ('-id',)
+
+	def __str__(self):
+		return self.name
+	
+	def save(self, *args, **kwargs):
+		self.name = self.name.replace(' ', '_').upper()
+		super().save(*args, **kwargs)
+
+
+
+
+class Role(models.Model):
+	name = models.CharField(max_length=255)
+	permissions = models.ManyToManyField(Permission, blank=True)
+
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True)
+
+	created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+
+	updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+	
+	class Meta:
+		ordering = ('-id', )
+
+	def __str__(self):
+		return self.name
+	
+	def save(self, *args, **kwargs):
+		self.name = self.name.replace(' ', '_').upper()
+		super().save(*args, **kwargs)
+
+
+
 
 class UserManager(BaseUserManager):
 	def create_user(self, first_name, last_name, email, gender, password=None):
@@ -52,23 +149,25 @@ class User(AbstractBaseUser):
 	last_name = models.CharField(max_length=100)
 	username = models.CharField(max_length=100, null=True, blank=True, unique=True)
 	email = models.EmailField(verbose_name='email address', max_length=255, unique=True)
-
 	gender = models.CharField(max_length=6, choices=Gender.choices, default=Gender.MALE)
 
-	primary_phone = PhoneNumberField(null=True, blank=True, unique=True)
-	secondary_phone = PhoneNumberField(null=True, blank=True, unique=True)
+	primary_phone = models.CharField(max_length=20 , null=True, blank=True, unique=True)
+	secondary_phone = models.CharField(max_length=20, null=True, blank=True, unique=True)
 
 	user_type = models.CharField(max_length=50, null=True, blank=True)
-
 	date_of_birth = models.DateField(null=True, blank=True)
+	nid = models.CharField(max_length=32, null=True, blank=True)
+	address = models.CharField(max_length=255, null=True, blank=True)
+
+	role = models.ForeignKey(Role, on_delete=models.SET_NULL, null=True, blank=True)
+	country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True, blank=True)
+	city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True, blank=True)
+	postal_code = models.CharField(max_length=50, null=True, blank=True)
 
 	is_active = models.BooleanField(default=True)
 	is_admin = models.BooleanField(default=False)
 
-	address = models.CharField(max_length=255, null=True, blank=True)
-
 	image = models.ImageField(upload_to="users/", null=True, blank=True)
-	nid = models.CharField(max_length=32, null=True, blank=True)
 
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
@@ -86,6 +185,16 @@ class User(AbstractBaseUser):
 
 	def __str__(self):
 		return self.email
+
+	def has_perm(self, perm, obj=None):
+		"Does the user have a specific permission?"
+		# Simplest possible answer: Yes, always
+		return True
+
+	def has_module_perms(self, app_label):
+		"Does the user have permissions to view the app `app_label`?"
+		# Simplest possible answer: Yes, always
+		return True
 
 	@property
 	def is_staff(self):
@@ -108,32 +217,8 @@ class Vendor(User):
 
 
 
-class CustomerType(models.Model):
-	name = models.CharField(max_length=20)
-
-	created_at = models.DateTimeField(auto_now_add=True)
-	updated_at = models.DateTimeField(auto_now=True)
-
-	created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
-	updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
-
-	class Meta:
-		verbose_name_plural = 'CustomerTypes'
-		ordering = ('-id', )
-
-	def __str__(self):
-		return self.name
-	
-	def save(self, *args, **kwargs):
-		self.name = self.name.capitalize()
-		super().save(*args, **kwargs)
-
-
-
-
 class Customer(User):
 	is_online = models.BooleanField(default=True)
-	customer_type = models.ForeignKey(CustomerType, on_delete=models.SET_NULL, null=True, blank=True)
 
 	class Meta:
 		ordering = ('-id', )
