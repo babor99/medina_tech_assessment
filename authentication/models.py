@@ -14,9 +14,14 @@ from phonenumber_field.modelfields import PhoneNumberField
 # models goes here..
 
 class Country(models.Model):
-	name = models.CharField(max_length=50)
-	code = models.CharField(max_length=3, null=True, blank=True)
-	phone = models.CharField(max_length=10, null=True, blank=True)
+	name = models.CharField(max_length=255)
+	capital_name = models.CharField(max_length=255, null=True, blank=True)
+	country_code = models.CharField(max_length=255, null=True, blank=True)
+	country_code2 = models.CharField(max_length=255, null=True, blank=True)
+	phone_code = models.CharField(max_length=255, null=True, blank=True)
+	currency_code = models.CharField(max_length=255, null=True, blank=True)
+	continent_name = models.CharField(max_length=255, null=True, blank=True)
+	continent_code = models.CharField(max_length=255, null=True, blank=True)
 
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
@@ -40,8 +45,11 @@ class Country(models.Model):
 
 class City(models.Model):
 	name = models.CharField(max_length=50)
-
 	country = models.ForeignKey(Country, on_delete= models.RESTRICT, related_name='cities')
+	bn_name = models.CharField(max_length=50, null=True, blank=True)
+	lat = models.CharField(max_length=255, null=True, blank=True)
+	lon = models.CharField(max_length=255, null=True, blank=True)
+	url = models.CharField(max_length=500, null=True, blank=True)
 
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)

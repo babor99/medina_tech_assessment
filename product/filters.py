@@ -42,6 +42,16 @@ class ColorFilter(filters.FilterSet):
 
 
 
+class WeatherTypeFilter(filters.FilterSet):
+    name = filters.CharFilter(field_name="name", lookup_expr='icontains')
+
+    class Meta:
+        model = WeatherType
+        fields = ['name', ]
+
+
+
+
 class ProductFilterByNameCat(filters.FilterSet):
     name = filters.CharFilter(field_name="name", lookup_expr='icontains')
 

@@ -21,4 +21,6 @@ urlpatterns = [
 
 	path('api/v1/user/passwordchange/<int:pk>', views.userPasswordChange),
 
+	path('api/v1/user/uploadimage/<int:pk>', views.userImageUpload),
+
 ]

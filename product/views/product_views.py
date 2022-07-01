@@ -10,31 +10,63 @@ from sequences import get_next_value
 
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 
-from product.models import Brand, Category, Discount, Product
+from product.models import Brand, Category, Discount, Product, WeatherType
 from product.serializers import DiscountListSerializer, ProductListSerializerWithDiscount, ProductSerializer, ProductListSerializer
 from product.filters import ProductFilterByNameCat, ProductFilterByBrandRatingPrice, ProductImageFilter
 
 from product.utils import decimalize_list
 
 from commons.pagination import Pagination
+from commons import constants
 from itertools import chain
-
+import requests
 
 
 
 # Create your views here.
 
-@extend_schema(request=ProductSerializer, responses=ProductSerializer)
+@extend_schema(
+	parameters=[
+		OpenApiParameter("page"),
+		OpenApiParameter("size"),
+  ],
+	request=ProductSerializer,
+	responses=ProductSerializer
+)
 @api_view(['GET'])
-def getABarcode(request):
-	try:
-		_num = get_next_value('product-barcode')
-		barcode = '10000' + str(_num)
-	
-		return Response({'barcode':barcode}, status=status.HTTP_200_OK)
-	except:
-		return Response({'detail':'Something went wrong'}, status=status.HTTP_400_BAD_REQUEST)
+def getAllProductOfUserLocWeather(request):
+	user_city = request.user.city
+	if user_city:
+		lat = user_city.lat
+		lon = user_city.lon
+		res = requests.get(str(constants.WEATHER_API_URL)+f'?lat={lat}&lon={lon}&appid={constants.WEATHER_API_KEY}')
+		temp = 12
+		print('res: ', res)
+		weather_types = WeatherType.objects.filter(temp_high__gte=temp, temp_low__lte=temp)
+		products = Product.objects.filter(product_type__in=weather_types)
+		total_elements = products.count()
 
+		page = request.query_params.get('page')
+		size = request.query_params.get('size')
+
+		# Pagination
+		pagination = Pagination()
+		pagination.page = page
+		pagination.size = size
+		products = pagination.paginate_data(products)
+
+		serializer = ProductListSerializer(products, many=True)
+
+		response = {
+			'products': serializer.data,
+			'page': pagination.page,
+			'size': pagination.size,
+			'total_pages': pagination.total_pages,
+			'total_elements': total_elements,
+		}
+		return Response(response, status=status.HTTP_200_OK)
+	else:
+		return Response({'detail': f""})
 
 
 
@@ -69,8 +101,47 @@ def getAllProduct(request):
 		'total_pages': pagination.total_pages,
 		'total_elements': total_elements,
 	}
-
 	return Response(response, status=status.HTTP_200_OK)
+
+
+
+
+@extend_schema(
+	parameters=[
+		OpenApiParameter("page"),
+		OpenApiParameter("size"),
+  ],
+	request=ProductSerializer,
+	responses=ProductSerializer
+)
+@api_view(['GET'])
+def getAllProductOfIndividualVendor(request):
+	user = request.user
+	if user.user_type == 'vendor':
+		products = Product.objects.filter(vendor=user)
+		total_elements = products.count()
+
+		page = request.query_params.get('page')
+		size = request.query_params.get('size')
+
+		# Pagination
+		pagination = Pagination()
+		pagination.page = page
+		pagination.size = size
+		products = pagination.paginate_data(products)
+
+		serializer = ProductListSerializer(products, many=True)
+
+		response = {
+			'products': serializer.data,
+			'page': pagination.page,
+			'size': pagination.size,
+			'total_pages': pagination.total_pages,
+			'total_elements': total_elements,
+		}
+		return Response(response, status=status.HTTP_200_OK)
+	else:
+		return Response({'detail': f"{user.first_name} is not a vendor account. Please login with vendor account."}, status=status.HTTP_403_FORBIDDEN)
 
 
 
@@ -104,6 +175,23 @@ def getAProduct(request, pk):
 		return Response(serializer.data, status=status.HTTP_200_OK)
 	except ObjectDoesNotExist:
 		return Response({'detail': f"Product id - {pk} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+@extend_schema(request=ProductSerializer, responses=ProductSerializer)
+@api_view(['GET'])
+def getAProductOfIndividualVendor(request, pk):
+	user = request.user
+	if user.user_type == 'vendor':
+		try:
+			product = Product.objects.get(vendor=user, pk=pk)
+			serializer = ProductListSerializer(product)
+			return Response(serializer.data, status=status.HTTP_200_OK)
+		except ObjectDoesNotExist:
+			return Response({'detail': f"Product id - {pk} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
+	else:
+		return Response({'detail': f"{user.first_name} is not a vendor account. Please login with vendor account."}, status=status.HTTP_403_FORBIDDEN)
 
 
 

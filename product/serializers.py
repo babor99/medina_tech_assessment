@@ -268,6 +268,69 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 
+class WeatherTypeListSerializer(serializers.ModelSerializer):
+	created_by = AdminUserMinimalListSerializer()
+	updated_by = AdminUserMinimalListSerializer()
+
+	class Meta:
+		model = WeatherType
+		fields = '__all__'
+		extra_kwargs = {
+			'created_at':{
+				'read_only': True,
+			},
+			'updated_at':{
+				'read_only': True,
+			},
+			'created_by':{
+				'read_only': True,
+			},
+			'updated_by':{
+				'read_only': True,
+			},
+		}
+
+
+
+
+class WeatherTypeSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = WeatherType
+		fields = '__all__'
+		extra_kwargs = {
+			'created_at':{
+				'read_only': True,
+			},
+			'updated_at':{
+				'read_only': True,
+			},
+			'created_by':{
+				'read_only': True,
+			},
+			'updated_by':{
+				'read_only': True,
+			},
+		}
+
+	def create(self, validated_data):
+		modelObject = super().create(validated_data=validated_data)
+		user = get_current_authenticated_user()
+		if user is not None:
+			modelObject.created_by = user
+		modelObject.save()
+		return modelObject
+
+	def update(self, instance, validated_data):
+		modelObject = super().update(instance=instance, validated_data=validated_data)
+		user = get_current_authenticated_user()
+		if user is not None:
+			modelObject.updated_by = user
+		modelObject.save()
+		return modelObject
+
+
+
+
 class ProductListSerializer(serializers.ModelSerializer):
 	brand = BrandMinimalListSerializer()
 	category = CategoryMinimalListSerializer()

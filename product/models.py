@@ -1,12 +1,11 @@
+from pyexpat import model
 from django.db.models.lookups import BuiltinLookup
 from django.db import models
 from django.conf import settings
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db.models.fields.related import ForeignKey
 
-from PIL import Image
-
-
+from authentication.models import Vendor, Customer
 
 
 # Create your models here.
@@ -70,6 +69,32 @@ class Category(models.Model):
 
 
 
+class WeatherType(models.Model):
+	name = models.CharField(max_length=255)
+	temp_low = models.DecimalField(max_digits=255, decimal_places=2, null=True, blank=True)
+	temp_high = models.DecimalField(max_digits=255, decimal_places=2, null=True, blank=True)
+	description = models.TextField(blank=True, null=True)
+
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True)
+
+	created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+	updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+	
+	def __str__(self):
+		return self.name
+
+	class Meta:
+		verbose_name_plural = 'WeatherTypes'
+		ordering = ['-id',]
+	
+	def save(self, *args, **kwargs):
+		self.name = self.name.replace(' ', '_').lower()
+		super().save(*args, **kwargs)
+
+
+
+
 class Product(models.Model):
 	name = models.CharField(max_length=255, null=True, blank=True)
 	short_desc = models.TextField(blank=True, null=True)
@@ -80,25 +105,18 @@ class Product(models.Model):
 
 	brand = models.ForeignKey(Brand, on_delete= models.SET_NULL, null=True, blank=True)
 	category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
+	vendor = models.ForeignKey(Vendor, on_delete= models.SET_NULL, null=True, blank=True)
+	product_type = models.ForeignKey(WeatherType, on_delete=models.SET_NULL, null=True, blank=True)
 
 	old_price = models.DecimalField(default=0, max_digits=20, decimal_places=2, null=True, blank=True)
 	unit_price = models.DecimalField(default=0, max_digits=20, decimal_places=2)
 
 	condition = models.CharField(max_length=255, null=True, blank=True)
 
-	is_published = models.BooleanField(default=True)
-	is_disabled = models.BooleanField(default=False)
 	is_popular = models.BooleanField(default=False)
 	is_featured = models.BooleanField(default=False)
-	is_flash_deal = models.BooleanField(default=False)
 	is_new_arrival = models.BooleanField(default=False)
 	is_under_discount = models.BooleanField(default=False)
-	is_available_for_preorder = models.BooleanField(default=False)
-	
-	mark_as_new = models.BooleanField(default=False)
-	show_on_homepage = models.BooleanField(default=False)
-	disable_wishlist_button = models.BooleanField(default=False)
-	disable_buy_button = models.BooleanField(default=False)
 
 	is_verified = models.BooleanField(default=False)
 
@@ -106,8 +124,6 @@ class Product(models.Model):
 
 	rating = models.DecimalField(max_digits=7, decimal_places=1, null=True, blank=True)
 	num_reviews = models.PositiveIntegerField(default=0, null=True, blank=True)
-
-	display_order = models.PositiveIntegerField(default=1, null=True, blank=True, validators=[MinValueValidator(1), MaxValueValidator(100)])
 
 	expire_info = models.TextField(blank=True, null=True)
 	admin_comment = models.TextField(blank=True, null=True)

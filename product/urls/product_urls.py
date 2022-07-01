@@ -1,17 +1,21 @@
-
 from django.urls import path
 from product.views import product_views as views
 
 
+
 urlpatterns = [
 
-	path('api/v1/product_barcode/', views.getABarcode),
+	path('api/v1/product/recommended_product_based_on_user_location_weather/', views.getAllProductOfUserLocWeather), #pagination done
 
 	path('api/v1/product/all/', views.getAllProduct), #pagination done
+
+	path('api/v1/product/all_product_of_individual_vendor/', views.getAllProductOfIndividualVendor), #pagination done
 
 	path('api/v1/product/without_pagination/all/', views.getAllProductWithoutPagination),
 
 	path('api/v1/product/<int:pk>', views.getAProduct),
+
+	path('api/v1/product/a_product_of_individual_vendor/<int:pk>', views.getAProductOfIndividualVendor),
 
 	path('api/v1/product_using_category/<int:category_id>', views.getAllProductUsingCategory), #pagination done
 
