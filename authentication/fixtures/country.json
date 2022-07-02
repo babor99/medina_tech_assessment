@@ -4,7 +4,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"AD",
-         "country_name":"Andorra",
+         "name":"Andorra",
          "continent_code":"EU",
          "capital_name":"Andorra la Vella",
          "currency_code":"EUR",
@@ -22,7 +22,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"AE",
-         "country_name":"United Arab Emirates",
+         "name":"United Arab Emirates",
          "continent_code":"AS",
          "capital_name":"Abu Dhabi",
          "currency_code":"AED",
@@ -40,7 +40,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"AF",
-         "country_name":"Afghanistan",
+         "name":"Afghanistan",
          "continent_code":"AS",
          "capital_name":"Kabul",
          "currency_code":"AFN",
@@ -58,7 +58,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"AG",
-         "country_name":"Antigua and Barbuda",
+         "name":"Antigua and Barbuda",
          "continent_code":"NA",
          "capital_name":"St. John's",
          "currency_code":"XCD",
@@ -76,7 +76,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"AI",
-         "country_name":"Anguilla",
+         "name":"Anguilla",
          "continent_code":"NA",
          "capital_name":"The Valley",
          "currency_code":"XCD",
@@ -94,7 +94,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"AL",
-         "country_name":"Albania",
+         "name":"Albania",
          "continent_code":"EU",
          "capital_name":"Tirana",
          "currency_code":"ALL",
@@ -112,7 +112,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"AM",
-         "country_name":"Armenia",
+         "name":"Armenia",
          "continent_code":"AS",
          "capital_name":"Yerevan",
          "currency_code":"AMD",
@@ -130,7 +130,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"AO",
-         "country_name":"Angola",
+         "name":"Angola",
          "continent_code":"AF",
          "capital_name":"Luanda",
          "currency_code":"AOA",
@@ -148,7 +148,7 @@
       "fields":{
          "continent_name":"Antarctica",
          "country_code":"AQ",
-         "country_name":"Antarctica",
+         "name":"Antarctica",
          "continent_code":"AN",
          "capital_name":"",
          "currency_code":"",
@@ -166,7 +166,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"AR",
-         "country_name":"Argentina",
+         "name":"Argentina",
          "continent_code":"SA",
          "capital_name":"Buenos Aires",
          "currency_code":"ARS",
@@ -184,7 +184,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"AS",
-         "country_name":"American Samoa",
+         "name":"American Samoa",
          "continent_code":"OC",
          "capital_name":"Pago Pago",
          "currency_code":"USD",
@@ -202,7 +202,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"AT",
-         "country_name":"Austria",
+         "name":"Austria",
          "continent_code":"EU",
          "capital_name":"Vienna",
          "currency_code":"EUR",
@@ -220,7 +220,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"AU",
-         "country_name":"Australia",
+         "name":"Australia",
          "continent_code":"OC",
          "capital_name":"Canberra",
          "currency_code":"AUD",
@@ -238,7 +238,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"AW",
-         "country_name":"Aruba",
+         "name":"Aruba",
          "continent_code":"NA",
          "capital_name":"Oranjestad",
          "currency_code":"AWG",
@@ -256,7 +256,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"AX",
-         "country_name":"Aland Islands",
+         "name":"Aland Islands",
          "continent_code":"EU",
          "capital_name":"Mariehamn",
          "currency_code":"EUR",
@@ -274,7 +274,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"AZ",
-         "country_name":"Azerbaijan",
+         "name":"Azerbaijan",
          "continent_code":"AS",
          "capital_name":"Baku",
          "currency_code":"AZN",
@@ -292,7 +292,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"BA",
-         "country_name":"Bosnia and Herzegovina",
+         "name":"Bosnia and Herzegovina",
          "continent_code":"EU",
          "capital_name":"Sarajevo",
          "currency_code":"BAM",
@@ -310,7 +310,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"BB",
-         "country_name":"Barbados",
+         "name":"Barbados",
          "continent_code":"NA",
          "capital_name":"Bridgetown",
          "currency_code":"BBD",
@@ -328,7 +328,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"BD",
-         "country_name":"Bangladesh",
+         "name":"Bangladesh",
          "continent_code":"AS",
          "capital_name":"Dhaka",
          "currency_code":"BDT",
@@ -346,7 +346,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"BE",
-         "country_name":"Belgium",
+         "name":"Belgium",
          "continent_code":"EU",
          "capital_name":"Brussels",
          "currency_code":"EUR",
@@ -364,7 +364,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"BF",
-         "country_name":"Burkina Faso",
+         "name":"Burkina Faso",
          "continent_code":"AF",
          "capital_name":"Ouagadougou",
          "currency_code":"XOF",
@@ -382,7 +382,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"BG",
-         "country_name":"Bulgaria",
+         "name":"Bulgaria",
          "continent_code":"EU",
          "capital_name":"Sofia",
          "currency_code":"BGN",
@@ -400,7 +400,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"BH",
-         "country_name":"Bahrain",
+         "name":"Bahrain",
          "continent_code":"AS",
          "capital_name":"Manama",
          "currency_code":"BHD",
@@ -418,7 +418,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"BI",
-         "country_name":"Burundi",
+         "name":"Burundi",
          "continent_code":"AF",
          "capital_name":"Bujumbura",
          "currency_code":"BIF",
@@ -436,7 +436,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"BJ",
-         "country_name":"Benin",
+         "name":"Benin",
          "continent_code":"AF",
          "capital_name":"Porto-Novo",
          "currency_code":"XOF",
@@ -454,7 +454,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"BL",
-         "country_name":"Saint Barthelemy",
+         "name":"Saint Barthelemy",
          "continent_code":"NA",
          "capital_name":"Gustavia",
          "currency_code":"EUR",
@@ -472,7 +472,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"BM",
-         "country_name":"Bermuda",
+         "name":"Bermuda",
          "continent_code":"NA",
          "capital_name":"Hamilton",
          "currency_code":"BMD",
@@ -490,7 +490,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"BN",
-         "country_name":"Brunei",
+         "name":"Brunei",
          "continent_code":"AS",
          "capital_name":"Bandar Seri Begawan",
          "currency_code":"BND",
@@ -508,7 +508,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"BO",
-         "country_name":"Bolivia",
+         "name":"Bolivia",
          "continent_code":"SA",
          "capital_name":"Sucre",
          "currency_code":"BOB",
@@ -526,7 +526,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"BQ",
-         "country_name":"Bonaire, Saint Eustatius and Saba ",
+         "name":"Bonaire, Saint Eustatius and Saba ",
          "continent_code":"NA",
          "capital_name":"",
          "currency_code":"USD",
@@ -544,7 +544,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"BR",
-         "country_name":"Brazil",
+         "name":"Brazil",
          "continent_code":"SA",
          "capital_name":"Brasilia",
          "currency_code":"BRL",
@@ -562,7 +562,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"BS",
-         "country_name":"Bahamas",
+         "name":"Bahamas",
          "continent_code":"NA",
          "capital_name":"Nassau",
          "currency_code":"BSD",
@@ -580,7 +580,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"BT",
-         "country_name":"Bhutan",
+         "name":"Bhutan",
          "continent_code":"AS",
          "capital_name":"Thimphu",
          "currency_code":"BTN",
@@ -598,7 +598,7 @@
       "fields":{
          "continent_name":"Antarctica",
          "country_code":"BV",
-         "country_name":"Bouvet Island",
+         "name":"Bouvet Island",
          "continent_code":"AN",
          "capital_name":"",
          "currency_code":"NOK",
@@ -616,7 +616,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"BW",
-         "country_name":"Botswana",
+         "name":"Botswana",
          "continent_code":"AF",
          "capital_name":"Gaborone",
          "currency_code":"BWP",
@@ -634,7 +634,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"BY",
-         "country_name":"Belarus",
+         "name":"Belarus",
          "continent_code":"EU",
          "capital_name":"Minsk",
          "currency_code":"BYR",
@@ -652,7 +652,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"BZ",
-         "country_name":"Belize",
+         "name":"Belize",
          "continent_code":"NA",
          "capital_name":"Belmopan",
          "currency_code":"BZD",
@@ -670,7 +670,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"CA",
-         "country_name":"Canada",
+         "name":"Canada",
          "continent_code":"NA",
          "capital_name":"Ottawa",
          "currency_code":"CAD",
@@ -688,7 +688,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"CC",
-         "country_name":"Cocos Islands",
+         "name":"Cocos Islands",
          "continent_code":"AS",
          "capital_name":"West Island",
          "currency_code":"AUD",
@@ -706,7 +706,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"CD",
-         "country_name":"Democratic Republic of the Congo",
+         "name":"Democratic Republic of the Congo",
          "continent_code":"AF",
          "capital_name":"Kinshasa",
          "currency_code":"CDF",
@@ -724,7 +724,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"CF",
-         "country_name":"Central African Republic",
+         "name":"Central African Republic",
          "continent_code":"AF",
          "capital_name":"Bangui",
          "currency_code":"XAF",
@@ -742,7 +742,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"CG",
-         "country_name":"Republic of the Congo",
+         "name":"Republic of the Congo",
          "continent_code":"AF",
          "capital_name":"Brazzaville",
          "currency_code":"XAF",
@@ -760,7 +760,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"CH",
-         "country_name":"Switzerland",
+         "name":"Switzerland",
          "continent_code":"EU",
          "capital_name":"Berne",
          "currency_code":"CHF",
@@ -778,7 +778,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"CI",
-         "country_name":"Ivory Coast",
+         "name":"Ivory Coast",
          "continent_code":"AF",
          "capital_name":"Yamoussoukro",
          "currency_code":"XOF",
@@ -796,7 +796,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"CK",
-         "country_name":"Cook Islands",
+         "name":"Cook Islands",
          "continent_code":"OC",
          "capital_name":"Avarua",
          "currency_code":"NZD",
@@ -814,7 +814,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"CL",
-         "country_name":"Chile",
+         "name":"Chile",
          "continent_code":"SA",
          "capital_name":"Santiago",
          "currency_code":"CLP",
@@ -832,7 +832,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"CM",
-         "country_name":"Cameroon",
+         "name":"Cameroon",
          "continent_code":"AF",
          "capital_name":"Yaounde",
          "currency_code":"XAF",
@@ -850,7 +850,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"CN",
-         "country_name":"China",
+         "name":"China",
          "continent_code":"AS",
          "capital_name":"Beijing",
          "currency_code":"CNY",
@@ -868,7 +868,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"CO",
-         "country_name":"Colombia",
+         "name":"Colombia",
          "continent_code":"SA",
          "capital_name":"Bogota",
          "currency_code":"COP",
@@ -886,7 +886,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"CR",
-         "country_name":"Costa Rica",
+         "name":"Costa Rica",
          "continent_code":"NA",
          "capital_name":"San Jose",
          "currency_code":"CRC",
@@ -904,7 +904,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"CU",
-         "country_name":"Cuba",
+         "name":"Cuba",
          "continent_code":"NA",
          "capital_name":"Havana",
          "currency_code":"CUP",
@@ -922,7 +922,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"CV",
-         "country_name":"Cape Verde",
+         "name":"Cape Verde",
          "continent_code":"AF",
          "capital_name":"Praia",
          "currency_code":"CVE",
@@ -940,7 +940,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"CW",
-         "country_name":"Curacao",
+         "name":"Curacao",
          "continent_code":"NA",
          "capital_name":" Willemstad",
          "currency_code":"ANG",
@@ -958,7 +958,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"CX",
-         "country_name":"Christmas Island",
+         "name":"Christmas Island",
          "continent_code":"AS",
          "capital_name":"Flying Fish Cove",
          "currency_code":"AUD",
@@ -976,7 +976,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"CY",
-         "country_name":"Cyprus",
+         "name":"Cyprus",
          "continent_code":"EU",
          "capital_name":"Nicosia",
          "currency_code":"EUR",
@@ -994,7 +994,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"CZ",
-         "country_name":"Czech Republic",
+         "name":"Czech Republic",
          "continent_code":"EU",
          "capital_name":"Prague",
          "currency_code":"CZK",
@@ -1012,7 +1012,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"DE",
-         "country_name":"Germany",
+         "name":"Germany",
          "continent_code":"EU",
          "capital_name":"Berlin",
          "currency_code":"EUR",
@@ -1030,7 +1030,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"DJ",
-         "country_name":"Djibouti",
+         "name":"Djibouti",
          "continent_code":"AF",
          "capital_name":"Djibouti",
          "currency_code":"DJF",
@@ -1048,7 +1048,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"DK",
-         "country_name":"Denmark",
+         "name":"Denmark",
          "continent_code":"EU",
          "capital_name":"Copenhagen",
          "currency_code":"DKK",
@@ -1066,7 +1066,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"DM",
-         "country_name":"Dominica",
+         "name":"Dominica",
          "continent_code":"NA",
          "capital_name":"Roseau",
          "currency_code":"XCD",
@@ -1084,7 +1084,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"DO",
-         "country_name":"Dominican Republic",
+         "name":"Dominican Republic",
          "continent_code":"NA",
          "capital_name":"Santo Domingo",
          "currency_code":"DOP",
@@ -1102,7 +1102,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"DZ",
-         "country_name":"Algeria",
+         "name":"Algeria",
          "continent_code":"AF",
          "capital_name":"Algiers",
          "currency_code":"DZD",
@@ -1120,7 +1120,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"EC",
-         "country_name":"Ecuador",
+         "name":"Ecuador",
          "continent_code":"SA",
          "capital_name":"Quito",
          "currency_code":"USD",
@@ -1138,7 +1138,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"EE",
-         "country_name":"Estonia",
+         "name":"Estonia",
          "continent_code":"EU",
          "capital_name":"Tallinn",
          "currency_code":"EUR",
@@ -1156,7 +1156,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"EG",
-         "country_name":"Egypt",
+         "name":"Egypt",
          "continent_code":"AF",
          "capital_name":"Cairo",
          "currency_code":"EGP",
@@ -1174,7 +1174,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"EH",
-         "country_name":"Western Sahara",
+         "name":"Western Sahara",
          "continent_code":"AF",
          "capital_name":"El-Aaiun",
          "currency_code":"MAD",
@@ -1192,7 +1192,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"ER",
-         "country_name":"Eritrea",
+         "name":"Eritrea",
          "continent_code":"AF",
          "capital_name":"Asmara",
          "currency_code":"ERN",
@@ -1210,7 +1210,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"ES",
-         "country_name":"Spain",
+         "name":"Spain",
          "continent_code":"EU",
          "capital_name":"Madrid",
          "currency_code":"EUR",
@@ -1228,7 +1228,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"ET",
-         "country_name":"Ethiopia",
+         "name":"Ethiopia",
          "continent_code":"AF",
          "capital_name":"Addis Ababa",
          "currency_code":"ETB",
@@ -1246,7 +1246,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"FI",
-         "country_name":"Finland",
+         "name":"Finland",
          "continent_code":"EU",
          "capital_name":"Helsinki",
          "currency_code":"EUR",
@@ -1264,7 +1264,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"FJ",
-         "country_name":"Fiji",
+         "name":"Fiji",
          "continent_code":"OC",
          "capital_name":"Suva",
          "currency_code":"FJD",
@@ -1282,7 +1282,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"FK",
-         "country_name":"Falkland Islands",
+         "name":"Falkland Islands",
          "continent_code":"SA",
          "capital_name":"Stanley",
          "currency_code":"FKP",
@@ -1300,7 +1300,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"FM",
-         "country_name":"Micronesia",
+         "name":"Micronesia",
          "continent_code":"OC",
          "capital_name":"Palikir",
          "currency_code":"USD",
@@ -1318,7 +1318,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"FO",
-         "country_name":"Faroe Islands",
+         "name":"Faroe Islands",
          "continent_code":"EU",
          "capital_name":"Torshavn",
          "currency_code":"DKK",
@@ -1336,7 +1336,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"FR",
-         "country_name":"France",
+         "name":"France",
          "continent_code":"EU",
          "capital_name":"Paris",
          "currency_code":"EUR",
@@ -1354,7 +1354,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"GA",
-         "country_name":"Gabon",
+         "name":"Gabon",
          "continent_code":"AF",
          "capital_name":"Libreville",
          "currency_code":"XAF",
@@ -1372,7 +1372,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"GB",
-         "country_name":"United Kingdom",
+         "name":"United Kingdom",
          "continent_code":"EU",
          "capital_name":"London",
          "currency_code":"GBP",
@@ -1390,7 +1390,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"GD",
-         "country_name":"Grenada",
+         "name":"Grenada",
          "continent_code":"NA",
          "capital_name":"St. George's",
          "currency_code":"XCD",
@@ -1408,7 +1408,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"GE",
-         "country_name":"Georgia",
+         "name":"Georgia",
          "continent_code":"AS",
          "capital_name":"Tbilisi",
          "currency_code":"GEL",
@@ -1426,7 +1426,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"GF",
-         "country_name":"French Guiana",
+         "name":"French Guiana",
          "continent_code":"SA",
          "capital_name":"Cayenne",
          "currency_code":"EUR",
@@ -1444,7 +1444,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"GG",
-         "country_name":"Guernsey",
+         "name":"Guernsey",
          "continent_code":"EU",
          "capital_name":"St Peter Port",
          "currency_code":"GBP",
@@ -1462,7 +1462,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"GH",
-         "country_name":"Ghana",
+         "name":"Ghana",
          "continent_code":"AF",
          "capital_name":"Accra",
          "currency_code":"GHS",
@@ -1480,7 +1480,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"GI",
-         "country_name":"Gibraltar",
+         "name":"Gibraltar",
          "continent_code":"EU",
          "capital_name":"Gibraltar",
          "currency_code":"GIP",
@@ -1498,7 +1498,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"GL",
-         "country_name":"Greenland",
+         "name":"Greenland",
          "continent_code":"NA",
          "capital_name":"Nuuk",
          "currency_code":"DKK",
@@ -1516,7 +1516,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"GM",
-         "country_name":"Gambia",
+         "name":"Gambia",
          "continent_code":"AF",
          "capital_name":"Banjul",
          "currency_code":"GMD",
@@ -1534,7 +1534,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"GN",
-         "country_name":"Guinea",
+         "name":"Guinea",
          "continent_code":"AF",
          "capital_name":"Conakry",
          "currency_code":"GNF",
@@ -1552,7 +1552,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"GP",
-         "country_name":"Guadeloupe",
+         "name":"Guadeloupe",
          "continent_code":"NA",
          "capital_name":"Basse-Terre",
          "currency_code":"EUR",
@@ -1570,7 +1570,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"GQ",
-         "country_name":"Equatorial Guinea",
+         "name":"Equatorial Guinea",
          "continent_code":"AF",
          "capital_name":"Malabo",
          "currency_code":"XAF",
@@ -1588,7 +1588,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"GR",
-         "country_name":"Greece",
+         "name":"Greece",
          "continent_code":"EU",
          "capital_name":"Athens",
          "currency_code":"EUR",
@@ -1606,7 +1606,7 @@
       "fields":{
          "continent_name":"Antarctica",
          "country_code":"GS",
-         "country_name":"South Georgia and the South Sandwich Islands",
+         "name":"South Georgia and the South Sandwich Islands",
          "continent_code":"AN",
          "capital_name":"Grytviken",
          "currency_code":"GBP",
@@ -1624,7 +1624,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"GT",
-         "country_name":"Guatemala",
+         "name":"Guatemala",
          "continent_code":"NA",
          "capital_name":"Guatemala City",
          "currency_code":"GTQ",
@@ -1642,7 +1642,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"GU",
-         "country_name":"Guam",
+         "name":"Guam",
          "continent_code":"OC",
          "capital_name":"Hagatna",
          "currency_code":"USD",
@@ -1660,7 +1660,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"GW",
-         "country_name":"Guinea-Bissau",
+         "name":"Guinea-Bissau",
          "continent_code":"AF",
          "capital_name":"Bissau",
          "currency_code":"XOF",
@@ -1678,7 +1678,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"GY",
-         "country_name":"Guyana",
+         "name":"Guyana",
          "continent_code":"SA",
          "capital_name":"Georgetown",
          "currency_code":"GYD",
@@ -1696,7 +1696,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"HK",
-         "country_name":"Hong Kong",
+         "name":"Hong Kong",
          "continent_code":"AS",
          "capital_name":"Hong Kong",
          "currency_code":"HKD",
@@ -1714,7 +1714,7 @@
       "fields":{
          "continent_name":"Antarctica",
          "country_code":"HM",
-         "country_name":"Heard Island and McDonald Islands",
+         "name":"Heard Island and McDonald Islands",
          "continent_code":"AN",
          "capital_name":"",
          "currency_code":"AUD",
@@ -1732,7 +1732,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"HN",
-         "country_name":"Honduras",
+         "name":"Honduras",
          "continent_code":"NA",
          "capital_name":"Tegucigalpa",
          "currency_code":"HNL",
@@ -1750,7 +1750,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"HR",
-         "country_name":"Croatia",
+         "name":"Croatia",
          "continent_code":"EU",
          "capital_name":"Zagreb",
          "currency_code":"HRK",
@@ -1768,7 +1768,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"HT",
-         "country_name":"Haiti",
+         "name":"Haiti",
          "continent_code":"NA",
          "capital_name":"Port-au-Prince",
          "currency_code":"HTG",
@@ -1786,7 +1786,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"HU",
-         "country_name":"Hungary",
+         "name":"Hungary",
          "continent_code":"EU",
          "capital_name":"Budapest",
          "currency_code":"HUF",
@@ -1804,7 +1804,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"ID",
-         "country_name":"Indonesia",
+         "name":"Indonesia",
          "continent_code":"AS",
          "capital_name":"Jakarta",
          "currency_code":"IDR",
@@ -1822,7 +1822,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"IE",
-         "country_name":"Ireland",
+         "name":"Ireland",
          "continent_code":"EU",
          "capital_name":"Dublin",
          "currency_code":"EUR",
@@ -1840,7 +1840,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"IL",
-         "country_name":"Israel",
+         "name":"Israel",
          "continent_code":"AS",
          "capital_name":"Jerusalem",
          "currency_code":"ILS",
@@ -1858,7 +1858,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"IM",
-         "country_name":"Isle of Man",
+         "name":"Isle of Man",
          "continent_code":"EU",
          "capital_name":"Douglas, Isle of Man",
          "currency_code":"GBP",
@@ -1876,7 +1876,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"IN",
-         "country_name":"India",
+         "name":"India",
          "continent_code":"AS",
          "capital_name":"New Delhi",
          "currency_code":"INR",
@@ -1894,7 +1894,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"IO",
-         "country_name":"British Indian Ocean Territory",
+         "name":"British Indian Ocean Territory",
          "continent_code":"AS",
          "capital_name":"Diego Garcia",
          "currency_code":"USD",
@@ -1912,7 +1912,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"IQ",
-         "country_name":"Iraq",
+         "name":"Iraq",
          "continent_code":"AS",
          "capital_name":"Baghdad",
          "currency_code":"IQD",
@@ -1930,7 +1930,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"IR",
-         "country_name":"Iran",
+         "name":"Iran",
          "continent_code":"AS",
          "capital_name":"Tehran",
          "currency_code":"IRR",
@@ -1948,7 +1948,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"IS",
-         "country_name":"Iceland",
+         "name":"Iceland",
          "continent_code":"EU",
          "capital_name":"Reykjavik",
          "currency_code":"ISK",
@@ -1966,7 +1966,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"IT",
-         "country_name":"Italy",
+         "name":"Italy",
          "continent_code":"EU",
          "capital_name":"Rome",
          "currency_code":"EUR",
@@ -1984,7 +1984,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"JE",
-         "country_name":"Jersey",
+         "name":"Jersey",
          "continent_code":"EU",
          "capital_name":"Saint Helier",
          "currency_code":"GBP",
@@ -2002,7 +2002,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"JM",
-         "country_name":"Jamaica",
+         "name":"Jamaica",
          "continent_code":"NA",
          "capital_name":"Kingston",
          "currency_code":"JMD",
@@ -2020,7 +2020,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"JO",
-         "country_name":"Jordan",
+         "name":"Jordan",
          "continent_code":"AS",
          "capital_name":"Amman",
          "currency_code":"JOD",
@@ -2038,7 +2038,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"JP",
-         "country_name":"Japan",
+         "name":"Japan",
          "continent_code":"AS",
          "capital_name":"Tokyo",
          "currency_code":"JPY",
@@ -2056,7 +2056,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"KE",
-         "country_name":"Kenya",
+         "name":"Kenya",
          "continent_code":"AF",
          "capital_name":"Nairobi",
          "currency_code":"KES",
@@ -2074,7 +2074,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"KG",
-         "country_name":"Kyrgyzstan",
+         "name":"Kyrgyzstan",
          "continent_code":"AS",
          "capital_name":"Bishkek",
          "currency_code":"KGS",
@@ -2092,7 +2092,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"KH",
-         "country_name":"Cambodia",
+         "name":"Cambodia",
          "continent_code":"AS",
          "capital_name":"Phnom Penh",
          "currency_code":"KHR",
@@ -2110,7 +2110,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"KI",
-         "country_name":"Kiribati",
+         "name":"Kiribati",
          "continent_code":"OC",
          "capital_name":"Tarawa",
          "currency_code":"AUD",
@@ -2128,7 +2128,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"KM",
-         "country_name":"Comoros",
+         "name":"Comoros",
          "continent_code":"AF",
          "capital_name":"Moroni",
          "currency_code":"KMF",
@@ -2146,7 +2146,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"KN",
-         "country_name":"Saint Kitts and Nevis",
+         "name":"Saint Kitts and Nevis",
          "continent_code":"NA",
          "capital_name":"Basseterre",
          "currency_code":"XCD",
@@ -2164,7 +2164,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"KP",
-         "country_name":"North Korea",
+         "name":"North Korea",
          "continent_code":"AS",
          "capital_name":"Pyongyang",
          "currency_code":"KPW",
@@ -2182,7 +2182,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"KR",
-         "country_name":"South Korea",
+         "name":"South Korea",
          "continent_code":"AS",
          "capital_name":"Seoul",
          "currency_code":"KRW",
@@ -2200,7 +2200,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"KW",
-         "country_name":"Kuwait",
+         "name":"Kuwait",
          "continent_code":"AS",
          "capital_name":"Kuwait City",
          "currency_code":"KWD",
@@ -2218,7 +2218,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"KY",
-         "country_name":"Cayman Islands",
+         "name":"Cayman Islands",
          "continent_code":"NA",
          "capital_name":"George Town",
          "currency_code":"KYD",
@@ -2236,7 +2236,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"KZ",
-         "country_name":"Kazakhstan",
+         "name":"Kazakhstan",
          "continent_code":"AS",
          "capital_name":"Astana",
          "currency_code":"KZT",
@@ -2254,7 +2254,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"LA",
-         "country_name":"Laos",
+         "name":"Laos",
          "continent_code":"AS",
          "capital_name":"Vientiane",
          "currency_code":"LAK",
@@ -2272,7 +2272,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"LB",
-         "country_name":"Lebanon",
+         "name":"Lebanon",
          "continent_code":"AS",
          "capital_name":"Beirut",
          "currency_code":"LBP",
@@ -2290,7 +2290,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"LC",
-         "country_name":"Saint Lucia",
+         "name":"Saint Lucia",
          "continent_code":"NA",
          "capital_name":"Castries",
          "currency_code":"XCD",
@@ -2308,7 +2308,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"LI",
-         "country_name":"Liechtenstein",
+         "name":"Liechtenstein",
          "continent_code":"EU",
          "capital_name":"Vaduz",
          "currency_code":"CHF",
@@ -2326,7 +2326,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"LK",
-         "country_name":"Sri Lanka",
+         "name":"Sri Lanka",
          "continent_code":"AS",
          "capital_name":"Colombo",
          "currency_code":"LKR",
@@ -2344,7 +2344,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"LR",
-         "country_name":"Liberia",
+         "name":"Liberia",
          "continent_code":"AF",
          "capital_name":"Monrovia",
          "currency_code":"LRD",
@@ -2362,7 +2362,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"LS",
-         "country_name":"Lesotho",
+         "name":"Lesotho",
          "continent_code":"AF",
          "capital_name":"Maseru",
          "currency_code":"LSL",
@@ -2380,7 +2380,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"LT",
-         "country_name":"Lithuania",
+         "name":"Lithuania",
          "continent_code":"EU",
          "capital_name":"Vilnius",
          "currency_code":"LTL",
@@ -2398,7 +2398,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"LU",
-         "country_name":"Luxembourg",
+         "name":"Luxembourg",
          "continent_code":"EU",
          "capital_name":"Luxembourg",
          "currency_code":"EUR",
@@ -2416,7 +2416,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"LV",
-         "country_name":"Latvia",
+         "name":"Latvia",
          "continent_code":"EU",
          "capital_name":"Riga",
          "currency_code":"EUR",
@@ -2434,7 +2434,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"LY",
-         "country_name":"Libya",
+         "name":"Libya",
          "continent_code":"AF",
          "capital_name":"Tripolis",
          "currency_code":"LYD",
@@ -2452,7 +2452,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"MA",
-         "country_name":"Morocco",
+         "name":"Morocco",
          "continent_code":"AF",
          "capital_name":"Rabat",
          "currency_code":"MAD",
@@ -2470,7 +2470,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"MC",
-         "country_name":"Monaco",
+         "name":"Monaco",
          "continent_code":"EU",
          "capital_name":"Monaco",
          "currency_code":"EUR",
@@ -2488,7 +2488,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"MD",
-         "country_name":"Moldova",
+         "name":"Moldova",
          "continent_code":"EU",
          "capital_name":"Chisinau",
          "currency_code":"MDL",
@@ -2506,7 +2506,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"ME",
-         "country_name":"Montenegro",
+         "name":"Montenegro",
          "continent_code":"EU",
          "capital_name":"Podgorica",
          "currency_code":"EUR",
@@ -2524,7 +2524,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"MF",
-         "country_name":"Saint Martin",
+         "name":"Saint Martin",
          "continent_code":"NA",
          "capital_name":"Marigot",
          "currency_code":"EUR",
@@ -2542,7 +2542,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"MG",
-         "country_name":"Madagascar",
+         "name":"Madagascar",
          "continent_code":"AF",
          "capital_name":"Antananarivo",
          "currency_code":"MGA",
@@ -2560,7 +2560,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"MH",
-         "country_name":"Marshall Islands",
+         "name":"Marshall Islands",
          "continent_code":"OC",
          "capital_name":"Majuro",
          "currency_code":"USD",
@@ -2578,7 +2578,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"MK",
-         "country_name":"Macedonia",
+         "name":"Macedonia",
          "continent_code":"EU",
          "capital_name":"Skopje",
          "currency_code":"MKD",
@@ -2596,7 +2596,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"ML",
-         "country_name":"Mali",
+         "name":"Mali",
          "continent_code":"AF",
          "capital_name":"Bamako",
          "currency_code":"XOF",
@@ -2614,7 +2614,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"MM",
-         "country_name":"Myanmar",
+         "name":"Myanmar",
          "continent_code":"AS",
          "capital_name":"Nay Pyi Taw",
          "currency_code":"MMK",
@@ -2632,7 +2632,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"MN",
-         "country_name":"Mongolia",
+         "name":"Mongolia",
          "continent_code":"AS",
          "capital_name":"Ulan Bator",
          "currency_code":"MNT",
@@ -2650,7 +2650,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"MO",
-         "country_name":"Macao",
+         "name":"Macao",
          "continent_code":"AS",
          "capital_name":"Macao",
          "currency_code":"MOP",
@@ -2668,7 +2668,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"MP",
-         "country_name":"Northern Mariana Islands",
+         "name":"Northern Mariana Islands",
          "continent_code":"OC",
          "capital_name":"Saipan",
          "currency_code":"USD",
@@ -2686,7 +2686,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"MQ",
-         "country_name":"Martinique",
+         "name":"Martinique",
          "continent_code":"NA",
          "capital_name":"Fort-de-France",
          "currency_code":"EUR",
@@ -2704,7 +2704,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"MR",
-         "country_name":"Mauritania",
+         "name":"Mauritania",
          "continent_code":"AF",
          "capital_name":"Nouakchott",
          "currency_code":"MRO",
@@ -2722,7 +2722,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"MS",
-         "country_name":"Montserrat",
+         "name":"Montserrat",
          "continent_code":"NA",
          "capital_name":"Plymouth",
          "currency_code":"XCD",
@@ -2740,7 +2740,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"MT",
-         "country_name":"Malta",
+         "name":"Malta",
          "continent_code":"EU",
          "capital_name":"Valletta",
          "currency_code":"EUR",
@@ -2758,7 +2758,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"MU",
-         "country_name":"Mauritius",
+         "name":"Mauritius",
          "continent_code":"AF",
          "capital_name":"Port Louis",
          "currency_code":"MUR",
@@ -2776,7 +2776,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"MV",
-         "country_name":"Maldives",
+         "name":"Maldives",
          "continent_code":"AS",
          "capital_name":"Male",
          "currency_code":"MVR",
@@ -2794,7 +2794,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"MW",
-         "country_name":"Malawi",
+         "name":"Malawi",
          "continent_code":"AF",
          "capital_name":"Lilongwe",
          "currency_code":"MWK",
@@ -2812,7 +2812,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"MX",
-         "country_name":"Mexico",
+         "name":"Mexico",
          "continent_code":"NA",
          "capital_name":"Mexico City",
          "currency_code":"MXN",
@@ -2830,7 +2830,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"MY",
-         "country_name":"Malaysia",
+         "name":"Malaysia",
          "continent_code":"AS",
          "capital_name":"Kuala Lumpur",
          "currency_code":"MYR",
@@ -2848,7 +2848,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"MZ",
-         "country_name":"Mozambique",
+         "name":"Mozambique",
          "continent_code":"AF",
          "capital_name":"Maputo",
          "currency_code":"MZN",
@@ -2866,7 +2866,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"NA",
-         "country_name":"Namibia",
+         "name":"Namibia",
          "continent_code":"AF",
          "capital_name":"Windhoek",
          "currency_code":"NAD",
@@ -2884,7 +2884,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"NC",
-         "country_name":"New Caledonia",
+         "name":"New Caledonia",
          "continent_code":"OC",
          "capital_name":"Noumea",
          "currency_code":"XPF",
@@ -2902,7 +2902,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"NE",
-         "country_name":"Niger",
+         "name":"Niger",
          "continent_code":"AF",
          "capital_name":"Niamey",
          "currency_code":"XOF",
@@ -2920,7 +2920,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"NF",
-         "country_name":"Norfolk Island",
+         "name":"Norfolk Island",
          "continent_code":"OC",
          "capital_name":"Kingston",
          "currency_code":"AUD",
@@ -2938,7 +2938,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"NG",
-         "country_name":"Nigeria",
+         "name":"Nigeria",
          "continent_code":"AF",
          "capital_name":"Abuja",
          "currency_code":"NGN",
@@ -2956,7 +2956,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"NI",
-         "country_name":"Nicaragua",
+         "name":"Nicaragua",
          "continent_code":"NA",
          "capital_name":"Managua",
          "currency_code":"NIO",
@@ -2974,7 +2974,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"NL",
-         "country_name":"Netherlands",
+         "name":"Netherlands",
          "continent_code":"EU",
          "capital_name":"Amsterdam",
          "currency_code":"EUR",
@@ -2992,7 +2992,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"NO",
-         "country_name":"Norway",
+         "name":"Norway",
          "continent_code":"EU",
          "capital_name":"Oslo",
          "currency_code":"NOK",
@@ -3010,7 +3010,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"NP",
-         "country_name":"Nepal",
+         "name":"Nepal",
          "continent_code":"AS",
          "capital_name":"Kathmandu",
          "currency_code":"NPR",
@@ -3028,7 +3028,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"NR",
-         "country_name":"Nauru",
+         "name":"Nauru",
          "continent_code":"OC",
          "capital_name":"Yaren",
          "currency_code":"AUD",
@@ -3046,7 +3046,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"NU",
-         "country_name":"Niue",
+         "name":"Niue",
          "continent_code":"OC",
          "capital_name":"Alofi",
          "currency_code":"NZD",
@@ -3064,7 +3064,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"NZ",
-         "country_name":"New Zealand",
+         "name":"New Zealand",
          "continent_code":"OC",
          "capital_name":"Wellington",
          "currency_code":"NZD",
@@ -3082,7 +3082,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"OM",
-         "country_name":"Oman",
+         "name":"Oman",
          "continent_code":"AS",
          "capital_name":"Muscat",
          "currency_code":"OMR",
@@ -3100,7 +3100,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"PA",
-         "country_name":"Panama",
+         "name":"Panama",
          "continent_code":"NA",
          "capital_name":"Panama City",
          "currency_code":"PAB",
@@ -3118,7 +3118,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"PE",
-         "country_name":"Peru",
+         "name":"Peru",
          "continent_code":"SA",
          "capital_name":"Lima",
          "currency_code":"PEN",
@@ -3136,7 +3136,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"PF",
-         "country_name":"French Polynesia",
+         "name":"French Polynesia",
          "continent_code":"OC",
          "capital_name":"Papeete",
          "currency_code":"XPF",
@@ -3154,7 +3154,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"PG",
-         "country_name":"Papua New Guinea",
+         "name":"Papua New Guinea",
          "continent_code":"OC",
          "capital_name":"Port Moresby",
          "currency_code":"PGK",
@@ -3172,7 +3172,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"PH",
-         "country_name":"Philippines",
+         "name":"Philippines",
          "continent_code":"AS",
          "capital_name":"Manila",
          "currency_code":"PHP",
@@ -3190,7 +3190,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"PK",
-         "country_name":"Pakistan",
+         "name":"Pakistan",
          "continent_code":"AS",
          "capital_name":"Islamabad",
          "currency_code":"PKR",
@@ -3208,7 +3208,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"PL",
-         "country_name":"Poland",
+         "name":"Poland",
          "continent_code":"EU",
          "capital_name":"Warsaw",
          "currency_code":"PLN",
@@ -3226,7 +3226,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"PM",
-         "country_name":"Saint Pierre and Miquelon",
+         "name":"Saint Pierre and Miquelon",
          "continent_code":"NA",
          "capital_name":"Saint-Pierre",
          "currency_code":"EUR",
@@ -3244,7 +3244,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"PN",
-         "country_name":"Pitcairn",
+         "name":"Pitcairn",
          "continent_code":"OC",
          "capital_name":"Adamstown",
          "currency_code":"NZD",
@@ -3262,7 +3262,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"PR",
-         "country_name":"Puerto Rico",
+         "name":"Puerto Rico",
          "continent_code":"NA",
          "capital_name":"San Juan",
          "currency_code":"USD",
@@ -3280,7 +3280,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"PS",
-         "country_name":"Palestinian Territory",
+         "name":"Palestinian Territory",
          "continent_code":"AS",
          "capital_name":"East Jerusalem",
          "currency_code":"ILS",
@@ -3298,7 +3298,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"PT",
-         "country_name":"Portugal",
+         "name":"Portugal",
          "continent_code":"EU",
          "capital_name":"Lisbon",
          "currency_code":"EUR",
@@ -3316,7 +3316,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"PW",
-         "country_name":"Palau",
+         "name":"Palau",
          "continent_code":"OC",
          "capital_name":"Melekeok",
          "currency_code":"USD",
@@ -3334,7 +3334,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"PY",
-         "country_name":"Paraguay",
+         "name":"Paraguay",
          "continent_code":"SA",
          "capital_name":"Asuncion",
          "currency_code":"PYG",
@@ -3352,7 +3352,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"QA",
-         "country_name":"Qatar",
+         "name":"Qatar",
          "continent_code":"AS",
          "capital_name":"Doha",
          "currency_code":"QAR",
@@ -3370,7 +3370,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"RE",
-         "country_name":"Reunion",
+         "name":"Reunion",
          "continent_code":"AF",
          "capital_name":"Saint-Denis",
          "currency_code":"EUR",
@@ -3388,7 +3388,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"RO",
-         "country_name":"Romania",
+         "name":"Romania",
          "continent_code":"EU",
          "capital_name":"Bucharest",
          "currency_code":"RON",
@@ -3406,7 +3406,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"RS",
-         "country_name":"Serbia",
+         "name":"Serbia",
          "continent_code":"EU",
          "capital_name":"Belgrade",
          "currency_code":"RSD",
@@ -3424,7 +3424,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"RU",
-         "country_name":"Russia",
+         "name":"Russia",
          "continent_code":"EU",
          "capital_name":"Moscow",
          "currency_code":"RUB",
@@ -3442,7 +3442,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"RW",
-         "country_name":"Rwanda",
+         "name":"Rwanda",
          "continent_code":"AF",
          "capital_name":"Kigali",
          "currency_code":"RWF",
@@ -3460,7 +3460,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"SA",
-         "country_name":"Saudi Arabia",
+         "name":"Saudi Arabia",
          "continent_code":"AS",
          "capital_name":"Riyadh",
          "currency_code":"SAR",
@@ -3478,7 +3478,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"SB",
-         "country_name":"Solomon Islands",
+         "name":"Solomon Islands",
          "continent_code":"OC",
          "capital_name":"Honiara",
          "currency_code":"SBD",
@@ -3496,7 +3496,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"SC",
-         "country_name":"Seychelles",
+         "name":"Seychelles",
          "continent_code":"AF",
          "capital_name":"Victoria",
          "currency_code":"SCR",
@@ -3514,7 +3514,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"SD",
-         "country_name":"Sudan",
+         "name":"Sudan",
          "continent_code":"AF",
          "capital_name":"Khartoum",
          "currency_code":"SDG",
@@ -3532,7 +3532,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"SE",
-         "country_name":"Sweden",
+         "name":"Sweden",
          "continent_code":"EU",
          "capital_name":"Stockholm",
          "currency_code":"SEK",
@@ -3550,7 +3550,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"SG",
-         "country_name":"Singapore",
+         "name":"Singapore",
          "continent_code":"AS",
          "capital_name":"Singapur",
          "currency_code":"SGD",
@@ -3568,7 +3568,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"SH",
-         "country_name":"Saint Helena",
+         "name":"Saint Helena",
          "continent_code":"AF",
          "capital_name":"Jamestown",
          "currency_code":"SHP",
@@ -3586,7 +3586,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"SI",
-         "country_name":"Slovenia",
+         "name":"Slovenia",
          "continent_code":"EU",
          "capital_name":"Ljubljana",
          "currency_code":"EUR",
@@ -3604,7 +3604,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"SJ",
-         "country_name":"Svalbard and Jan Mayen",
+         "name":"Svalbard and Jan Mayen",
          "continent_code":"EU",
          "capital_name":"Longyearbyen",
          "currency_code":"NOK",
@@ -3622,7 +3622,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"SK",
-         "country_name":"Slovakia",
+         "name":"Slovakia",
          "continent_code":"EU",
          "capital_name":"Bratislava",
          "currency_code":"EUR",
@@ -3640,7 +3640,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"SL",
-         "country_name":"Sierra Leone",
+         "name":"Sierra Leone",
          "continent_code":"AF",
          "capital_name":"Freetown",
          "currency_code":"SLL",
@@ -3658,7 +3658,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"SM",
-         "country_name":"San Marino",
+         "name":"San Marino",
          "continent_code":"EU",
          "capital_name":"San Marino",
          "currency_code":"EUR",
@@ -3676,7 +3676,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"SN",
-         "country_name":"Senegal",
+         "name":"Senegal",
          "continent_code":"AF",
          "capital_name":"Dakar",
          "currency_code":"XOF",
@@ -3694,7 +3694,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"SO",
-         "country_name":"Somalia",
+         "name":"Somalia",
          "continent_code":"AF",
          "capital_name":"Mogadishu",
          "currency_code":"SOS",
@@ -3712,7 +3712,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"SR",
-         "country_name":"Suriname",
+         "name":"Suriname",
          "continent_code":"SA",
          "capital_name":"Paramaribo",
          "currency_code":"SRD",
@@ -3730,7 +3730,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"SS",
-         "country_name":"South Sudan",
+         "name":"South Sudan",
          "continent_code":"AF",
          "capital_name":"Juba",
          "currency_code":"SSP",
@@ -3748,7 +3748,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"ST",
-         "country_name":"Sao Tome and Principe",
+         "name":"Sao Tome and Principe",
          "continent_code":"AF",
          "capital_name":"Sao Tome",
          "currency_code":"STD",
@@ -3766,7 +3766,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"SV",
-         "country_name":"El Salvador",
+         "name":"El Salvador",
          "continent_code":"NA",
          "capital_name":"San Salvador",
          "currency_code":"USD",
@@ -3784,7 +3784,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"SX",
-         "country_name":"Sint Maarten",
+         "name":"Sint Maarten",
          "continent_code":"NA",
          "capital_name":"Philipsburg",
          "currency_code":"ANG",
@@ -3802,7 +3802,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"SY",
-         "country_name":"Syria",
+         "name":"Syria",
          "continent_code":"AS",
          "capital_name":"Damascus",
          "currency_code":"SYP",
@@ -3820,7 +3820,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"SZ",
-         "country_name":"Swaziland",
+         "name":"Swaziland",
          "continent_code":"AF",
          "capital_name":"Mbabane",
          "currency_code":"SZL",
@@ -3838,7 +3838,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"TC",
-         "country_name":"Turks and Caicos Islands",
+         "name":"Turks and Caicos Islands",
          "continent_code":"NA",
          "capital_name":"Cockburn Town",
          "currency_code":"USD",
@@ -3856,7 +3856,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"TD",
-         "country_name":"Chad",
+         "name":"Chad",
          "continent_code":"AF",
          "capital_name":"N'Djamena",
          "currency_code":"XAF",
@@ -3874,7 +3874,7 @@
       "fields":{
          "continent_name":"Antarctica",
          "country_code":"TF",
-         "country_name":"French Southern Territories",
+         "name":"French Southern Territories",
          "continent_code":"AN",
          "capital_name":"Port-aux-Francais",
          "currency_code":"EUR",
@@ -3892,7 +3892,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"TG",
-         "country_name":"Togo",
+         "name":"Togo",
          "continent_code":"AF",
          "capital_name":"Lome",
          "currency_code":"XOF",
@@ -3910,7 +3910,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"TH",
-         "country_name":"Thailand",
+         "name":"Thailand",
          "continent_code":"AS",
          "capital_name":"Bangkok",
          "currency_code":"THB",
@@ -3928,7 +3928,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"TJ",
-         "country_name":"Tajikistan",
+         "name":"Tajikistan",
          "continent_code":"AS",
          "capital_name":"Dushanbe",
          "currency_code":"TJS",
@@ -3946,7 +3946,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"TK",
-         "country_name":"Tokelau",
+         "name":"Tokelau",
          "continent_code":"OC",
          "capital_name":"",
          "currency_code":"NZD",
@@ -3964,7 +3964,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"TL",
-         "country_name":"East Timor",
+         "name":"East Timor",
          "continent_code":"OC",
          "capital_name":"Dili",
          "currency_code":"USD",
@@ -3982,7 +3982,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"TM",
-         "country_name":"Turkmenistan",
+         "name":"Turkmenistan",
          "continent_code":"AS",
          "capital_name":"Ashgabat",
          "currency_code":"TMT",
@@ -4000,7 +4000,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"TN",
-         "country_name":"Tunisia",
+         "name":"Tunisia",
          "continent_code":"AF",
          "capital_name":"Tunis",
          "currency_code":"TND",
@@ -4018,7 +4018,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"TO",
-         "country_name":"Tonga",
+         "name":"Tonga",
          "continent_code":"OC",
          "capital_name":"Nuku'alofa",
          "currency_code":"TOP",
@@ -4036,7 +4036,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"TR",
-         "country_name":"Turkey",
+         "name":"Turkey",
          "continent_code":"AS",
          "capital_name":"Ankara",
          "currency_code":"TRY",
@@ -4054,7 +4054,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"TT",
-         "country_name":"Trinidad and Tobago",
+         "name":"Trinidad and Tobago",
          "continent_code":"NA",
          "capital_name":"Port of Spain",
          "currency_code":"TTD",
@@ -4072,7 +4072,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"TV",
-         "country_name":"Tuvalu",
+         "name":"Tuvalu",
          "continent_code":"OC",
          "capital_name":"Funafuti",
          "currency_code":"AUD",
@@ -4090,7 +4090,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"TW",
-         "country_name":"Taiwan",
+         "name":"Taiwan",
          "continent_code":"AS",
          "capital_name":"Taipei",
          "currency_code":"TWD",
@@ -4108,7 +4108,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"TZ",
-         "country_name":"Tanzania",
+         "name":"Tanzania",
          "continent_code":"AF",
          "capital_name":"Dodoma",
          "currency_code":"TZS",
@@ -4126,7 +4126,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"UA",
-         "country_name":"Ukraine",
+         "name":"Ukraine",
          "continent_code":"EU",
          "capital_name":"Kiev",
          "currency_code":"UAH",
@@ -4144,7 +4144,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"UG",
-         "country_name":"Uganda",
+         "name":"Uganda",
          "continent_code":"AF",
          "capital_name":"Kampala",
          "currency_code":"UGX",
@@ -4162,7 +4162,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"UM",
-         "country_name":"United States Minor Outlying Islands",
+         "name":"United States Minor Outlying Islands",
          "continent_code":"OC",
          "capital_name":"",
          "currency_code":"USD",
@@ -4180,7 +4180,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"US",
-         "country_name":"United States",
+         "name":"United States",
          "continent_code":"NA",
          "capital_name":"Washington",
          "currency_code":"USD",
@@ -4198,7 +4198,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"UY",
-         "country_name":"Uruguay",
+         "name":"Uruguay",
          "continent_code":"SA",
          "capital_name":"Montevideo",
          "currency_code":"UYU",
@@ -4216,7 +4216,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"UZ",
-         "country_name":"Uzbekistan",
+         "name":"Uzbekistan",
          "continent_code":"AS",
          "capital_name":"Tashkent",
          "currency_code":"UZS",
@@ -4234,7 +4234,7 @@
       "fields":{
          "continent_name":"Europe",
          "country_code":"VA",
-         "country_name":"Vatican",
+         "name":"Vatican",
          "continent_code":"EU",
          "capital_name":"Vatican City",
          "currency_code":"EUR",
@@ -4252,7 +4252,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"VC",
-         "country_name":"Saint Vincent and the Grenadines",
+         "name":"Saint Vincent and the Grenadines",
          "continent_code":"NA",
          "capital_name":"Kingstown",
          "currency_code":"XCD",
@@ -4270,7 +4270,7 @@
       "fields":{
          "continent_name":"South America",
          "country_code":"VE",
-         "country_name":"Venezuela",
+         "name":"Venezuela",
          "continent_code":"SA",
          "capital_name":"Caracas",
          "currency_code":"VEF",
@@ -4288,7 +4288,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"VG",
-         "country_name":"British Virgin Islands",
+         "name":"British Virgin Islands",
          "continent_code":"NA",
          "capital_name":"Road Town",
          "currency_code":"USD",
@@ -4306,7 +4306,7 @@
       "fields":{
          "continent_name":"North America",
          "country_code":"VI",
-         "country_name":"U.S. Virgin Islands",
+         "name":"U.S. Virgin Islands",
          "continent_code":"NA",
          "capital_name":"Charlotte Amalie",
          "currency_code":"USD",
@@ -4324,7 +4324,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"VN",
-         "country_name":"Vietnam",
+         "name":"Vietnam",
          "continent_code":"AS",
          "capital_name":"Hanoi",
          "currency_code":"VND",
@@ -4342,7 +4342,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"VU",
-         "country_name":"Vanuatu",
+         "name":"Vanuatu",
          "continent_code":"OC",
          "capital_name":"Port Vila",
          "currency_code":"VUV",
@@ -4360,7 +4360,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"WF",
-         "country_name":"Wallis and Futuna",
+         "name":"Wallis and Futuna",
          "continent_code":"OC",
          "capital_name":"Mata Utu",
          "currency_code":"XPF",
@@ -4378,7 +4378,7 @@
       "fields":{
          "continent_name":"Oceania",
          "country_code":"WS",
-         "country_name":"Samoa",
+         "name":"Samoa",
          "continent_code":"OC",
          "capital_name":"Apia",
          "currency_code":"WST",
@@ -4395,7 +4395,7 @@
       "id":245,
       "fields":{
          "country_code":"XK",
-         "country_name":"Kosovo",
+         "name":"Kosovo",
          "continent_code":"EU",
          "capital_name":"Pristina",
          "currency_code":"EUR",
@@ -4412,7 +4412,7 @@
       "fields":{
          "continent_name":"Asia",
          "country_code":"YE",
-         "country_name":"Yemen",
+         "name":"Yemen",
          "continent_code":"AS",
          "capital_name":"Sanaa",
          "currency_code":"YER",
@@ -4430,7 +4430,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"YT",
-         "country_name":"Mayotte",
+         "name":"Mayotte",
          "continent_code":"AF",
          "capital_name":"Mamoudzou",
          "currency_code":"EUR",
@@ -4448,7 +4448,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"ZA",
-         "country_name":"South Africa",
+         "name":"South Africa",
          "continent_code":"AF",
          "capital_name":"Pretoria",
          "currency_code":"ZAR",
@@ -4466,7 +4466,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"ZM",
-         "country_name":"Zambia",
+         "name":"Zambia",
          "continent_code":"AF",
          "capital_name":"Lusaka",
          "currency_code":"ZMK",
@@ -4484,7 +4484,7 @@
       "fields":{
          "continent_name":"Africa",
          "country_code":"ZW",
-         "country_name":"Zimbabwe",
+         "name":"Zimbabwe",
          "continent_code":"AF",
          "capital_name":"Harare",
          "currency_code":"ZWL",

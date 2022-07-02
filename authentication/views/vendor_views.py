@@ -10,13 +10,10 @@ from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
 from sequences import get_next_value
 
-from account.models import Group, LedgerAccount
-
 from authentication.models import User, Vendor
 from authentication.serializers import VendorSerializer, VendorListSerializer
 from authentication.filters import VendorFilter
 from authentication.decorators import has_permissions
-from authentication.utils import send_phone_otp, send_verification_email
 
 from commons.pagination import Pagination
 from commons.enums import PermissionEnum
@@ -153,29 +150,17 @@ def createVendor(request):
 	current_datetime = str(current_datetime)
 	print('current_datetime str: ', current_datetime)
 
-	try:
-		group_obj = Group.objects.get(name='Sundry Creditors')
-	except Group.ObjectDoesNotExist:
-		return Response("Please insert a 'Purchase Accounts' data in the Group table and then try again")
-
 	for key, value in data.items():
 		if value != '' and value != 0 and value != '0' and value != 'undefined':
 			vendor_data_dict[key] = value
 
 	first_name = vendor_data_dict.get('first_name', 'random')
 	username = vendor_data_dict.get('username', None)
-	email = vendor_data_dict.get('email', None)
-	primary_phone = vendor_data_dict.get('primary_phone', None)
 
 	if not username:
 		username = str(first_name) + str(get_next_value('sequential_user'))
 		vendor_data_dict['username'] = username
 
-	email_token = uuid.uuid4().hex
-	phone_otp = random.randint(123456, 987654)
-
-	vendor_data_dict['email_token'] = email_token
-	vendor_data_dict['phone_otp'] = phone_otp
 	vendor_data_dict['last_login'] = current_datetime
 	vendor_data_dict['user_type'] = 'vendor'
 
@@ -184,22 +169,8 @@ def createVendor(request):
 	serializer = VendorSerializer(data=vendor_data_dict, many=False)
 
 	if serializer.is_valid():
-		otp_res = send_phone_otp(primary_phone, phone_otp)
-		print('otp_res: ', otp_res)
-		print('typeof otp_res: ', type(otp_res))
-		if otp_res['message'] == 'Success!' and otp_res['isError'] == False:
-
-			serializer.save()
-
-			send_verification_email(email, email_token)
-
-			id = serializer.data['id']
-			vendor_ledger_obj = LedgerAccount.objects.create(name=username, ledger_type='vendor_ledger', reference_id=id, head_group=group_obj)
-			print('vendor_ledger_obj: ', vendor_ledger_obj)
-
-			return Response({'detail': f"OTP sent"}, status=status.HTTP_200_OK)
-		else:
-			return Response({'detail': f"Your phone number is invalid!"}, status=status.HTTP_400_BAD_REQUEST)
+		serializer.save()
+		return Response({'detail': f"vendor signup successfull."}, status=status.HTTP_201_CREATED)
 	else:
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

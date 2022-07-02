@@ -11,13 +11,10 @@ from sequences import get_next_value
 
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
-from account.models import Group, LedgerAccount
-
 from authentication.models import Customer, User
 from authentication.serializers import CustomerSerializer, CustomerListSerializer
 from authentication.filters import CustomerFilter
 from authentication.decorators import has_permissions
-from authentication.utils import send_phone_otp, send_verification_email
 
 from commons.pagination import Pagination
 from commons.enums import PermissionEnum
@@ -155,12 +152,6 @@ def createCustomer(request):
 	current_datetime = timezone.now()
 	current_datetime = str(current_datetime)
 	print('current_datetime str: ', current_datetime)
-
-	try:
-		group_obj = Group.objects.get(name='Sundry Debtors')
-	except Group.DoesNotExist:
-		return Response("Please insert 'Sundry Debtors' group and then try again")
-
 		
 	for key, value in data.items():
 		if value != '' and value != 0 and value != '0' and value != 'undefined':
@@ -186,23 +177,8 @@ def createCustomer(request):
 	serializer = CustomerSerializer(data=customer_data_dict, many=False)
 
 	if serializer.is_valid():
-
-		otp_res = send_phone_otp(primary_phone, phone_otp)
-		print('otp_res: ', otp_res)
-		print('typeof otp_res: ', type(otp_res))
-		if otp_res['message'] == 'Success!' and otp_res['isError'] == False:
-
-			serializer.save()
-
-			send_verification_email(email, email_token)
-
-			id = serializer.data['id']
-			customer_ledger_obj = LedgerAccount.objects.create(name=username, ledger_type='customer_ledger', reference_id=id, head_group=group_obj)
-			print('customer_ledger_obj: ', customer_ledger_obj)
-
-			return Response({'detail': f"OTP sent"}, status=status.HTTP_200_OK)
-		else:
-			return Response({'detail': f"Your phone number is invalid!"}, status=status.HTTP_400_BAD_REQUEST)
+		serializer.save()
+		return Response({'detail': "signup successfull."}, status=status.HTTP_201_CREATED)
 	else:
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

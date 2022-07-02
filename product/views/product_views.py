@@ -41,7 +41,7 @@ def getAllProductOfUserLocWeather(request):
 		lon = user_city.lon
 		res = requests.get(str(constants.WEATHER_API_URL)+f'?lat={lat}&lon={lon}&appid={constants.WEATHER_API_KEY}')
 		temp = 12
-		print('res: ', res)
+		print('res: ', res.data)
 		weather_types = WeatherType.objects.filter(temp_high__gte=temp, temp_low__lte=temp)
 		products = Product.objects.filter(product_type__in=weather_types)
 		total_elements = products.count()

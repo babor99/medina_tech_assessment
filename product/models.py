@@ -99,9 +99,7 @@ class Product(models.Model):
 	name = models.CharField(max_length=255, null=True, blank=True)
 	short_desc = models.TextField(blank=True, null=True)
 	full_desc = models.TextField(blank=True, null=True)
-	sku = models.CharField(max_length=255, null=True, blank=True)
-	gtin = models.CharField(max_length=50, null=True, blank=True)
-	barcode = models.PositiveBigIntegerField(null=True, blank=True)
+	condition = models.CharField(max_length=255, null=True, blank=True)
 
 	brand = models.ForeignKey(Brand, on_delete= models.SET_NULL, null=True, blank=True)
 	category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
@@ -111,22 +109,12 @@ class Product(models.Model):
 	old_price = models.DecimalField(default=0, max_digits=20, decimal_places=2, null=True, blank=True)
 	unit_price = models.DecimalField(default=0, max_digits=20, decimal_places=2)
 
-	condition = models.CharField(max_length=255, null=True, blank=True)
-
 	is_popular = models.BooleanField(default=False)
-	is_featured = models.BooleanField(default=False)
 	is_new_arrival = models.BooleanField(default=False)
 	is_under_discount = models.BooleanField(default=False)
-
 	is_verified = models.BooleanField(default=False)
 
 	thumbnail = models.ImageField(upload_to="product/", null=True, blank=True)
-
-	rating = models.DecimalField(max_digits=7, decimal_places=1, null=True, blank=True)
-	num_reviews = models.PositiveIntegerField(default=0, null=True, blank=True)
-
-	expire_info = models.TextField(blank=True, null=True)
-	admin_comment = models.TextField(blank=True, null=True)
 
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)

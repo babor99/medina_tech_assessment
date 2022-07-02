@@ -64,7 +64,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
 	responses=AdminUserSerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.PERMISSION_LIST.name])
 def getAllUser(request):
 	users = User.objects.all()
@@ -103,7 +103,7 @@ def getAllUser(request):
 	responses=AdminUserSerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.PERMISSION_LIST.name])
 def getAllUserWithoutPagination(request):
 	users = User.objects.all()
@@ -117,7 +117,7 @@ def getAllUserWithoutPagination(request):
 
 @extend_schema(request=AdminUserSerializer, responses=AdminUserSerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.USER_DETAILS.name])
 def getAUser(request, pk):
 	try:
@@ -132,7 +132,7 @@ def getAUser(request, pk):
 
 @extend_schema(request=AdminUserListSerializer, responses=AdminUserListSerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
 def searchUser(request):
 	users = UserFilter(request.GET, queryset=User.objects.all())
@@ -223,7 +223,7 @@ def updateUser(request, pk):
 @extend_schema(request=AdminUserSerializer, responses=AdminUserSerializer)
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
-@has_permissions([PermissionEnum.USER_DELETE.name])
+# @has_permissions([PermissionEnum.USER_DELETE.name])
 def deleteUser(request, pk):
 	try:
 		user = User.objects.get(pk=pk)

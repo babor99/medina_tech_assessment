@@ -12,6 +12,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
 	path('', views.index),
+	# Authentication Module
+	path('user/', include('authentication.urls.user_urls')),
+	path('vendor/', include('authentication.urls.vendor_urls')),
+	path('customer/', include('authentication.urls.customer_urls')),
+	path('role/', include('authentication.urls.role_urls')),
+	path('permission/', include('authentication.urls.permission_urls')),
+	path('country/', include('authentication.urls.country_urls')),
+	path('city/', include('authentication.urls.city_urls')),
 
 	# Product Module
 	path('product/', include('product.urls.product_urls')),
