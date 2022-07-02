@@ -11,16 +11,13 @@ from sequences import get_next_value
 
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
-from authentication.models import Customer, User
+from authentication.models import Customer
 from authentication.serializers import CustomerSerializer, CustomerListSerializer
 from authentication.filters import CustomerFilter
 from authentication.decorators import has_permissions
 
 from commons.pagination import Pagination
 from commons.enums import AuthPermEnum
-
-import uuid
-import random
 
 
 
@@ -119,7 +116,7 @@ def searchCustomer(request):
 	if len(customers) > 0:
 		return Response(response, status=status.HTTP_200_OK)
 	else:
-		return Response({'detail': f"There are no customers matching your search"}, status=status.HTTP_400_BAD_REQUEST)
+		return Response({'detail': f"There are no customers matching your search"}, status=status.HTTP_204_NO_CONTENT)
 
 
 
@@ -141,8 +138,8 @@ def getACustomer(request, pk):
 
 @extend_schema(request=CustomerSerializer, responses=CustomerSerializer)
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
-@has_permissions([AuthPermEnum.CUSTOMER_CREATE.name])
+# @permission_classes([IsAuthenticated])
+# @has_permissions([AuthPermEnum.CUSTOMER_CREATE.name])
 def createCustomer(request):
 	data = request.data
 	print('data: ', data)

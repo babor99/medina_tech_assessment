@@ -97,12 +97,11 @@ def getAllDiscountWithoutPagination(request):
 def getADiscountByProductId(request, product_id):
 	try:
 		discount = Discount.objects.get(product__id=product_id)
+		serializer = DiscountListSerializer(discount)
+		return Response({'discounts': serializer.data}, status=status.HTTP_200_OK)
 	except Discount.DoesNotExist:
-		return Response({'detail': f"Discount doesn't exists with product id {product_id}"})
+		return Response({'detail': f"Discount doesn't exists with product id {product_id}"}, status=status.HTTP_400_BAD_REQUEST)
 
-	serializer = DiscountListSerializer(discount)
-
-	return Response({'discounts': serializer.data}, status=status.HTTP_200_OK)
 
 
 
@@ -156,7 +155,7 @@ def searchDiscount(request):
 	if len(discounts) > 0:
 		return Response(response, status=status.HTTP_200_OK)
 	else:
-		return Response({'detail': f"There are no discounts matching your search"}, status=status.HTTP_400_BAD_REQUEST)
+		return Response({'detail': f"There are no discounts matching your search"}, status=status.HTTP_204_NO_CONTENT)
 
 
 

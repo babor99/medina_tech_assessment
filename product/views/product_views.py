@@ -16,7 +16,7 @@ from drf_spectacular.utils import OpenApiParameter, extend_schema
 from authentication.decorators import has_permissions
 
 from product.models import Brand, Category, Discount, Product, WeatherType
-from product.serializers import ProductSerializer, ProductListSerializer
+from product.serializers import ProductSerializer, ProductListSerializer, StockSerializer
 from product.filters import ProductFilter
 
 from product.utils import decimalize_list
@@ -80,7 +80,7 @@ def getAllProductOfUserLocWeather(request):
 			}
 			return Response(response, status=status.HTTP_200_OK)
 		else:
-			return Response({'detail': f"No recommended products found."}, status=status.HTTP_404_NOT_FOUND)
+			return Response({'detail': f"No recommended products found."}, status=status.HTTP_204_NO_CONTENT)
 	else:
 		return Response({'detail': f"User country not added. Please add country to your account."}, status=status.HTTP_404_NOT_FOUND)
 
@@ -307,7 +307,7 @@ def searchProduct(request):
 	if len(searched_products) > 0:
 		return Response(response, status=status.HTTP_200_OK)
 	else:
-		return Response({'detail': f"There are no products matching your search"}, status=status.HTTP_400_BAD_REQUEST)
+		return Response({'detail': f"There are no products matching your search"}, status=status.HTTP_204_NO_CONTENT)
 
 
 
@@ -320,6 +320,7 @@ def createProduct(request):
 	data = request.data
 	print('data: ', data)
 	filtered_data = {}
+	stock_data = {}
 
 	for key, value in data.items():
 		if value != '' and value != 0 and value != '0':
@@ -327,15 +328,24 @@ def createProduct(request):
 
 	print('filtered_data: ', filtered_data)
 
+	quantity = filtered_data.get('quantity', None)
+	if quantity:
+		stock_data['quantity'] = quantity
+	else:
+		stock_data['quantity'] = 1
+
 	filtered_data['condition'] = 'NEW'
 
 	serializer = ProductSerializer(data=filtered_data)
 
 	if serializer.is_valid():
 		serializer.save()
+		stock_serializer = StockSerializer(data=stock_data)
+		if stock_serializer.is_valid():
+			stock_serializer.save()
 		return Response(serializer.data, status=status.HTTP_201_CREATED)
 	else:
-		return Response(serializer.errors)
+		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -372,7 +382,7 @@ def updateProduct(request,pk):
 		serializer.save()
 		return Response(serializer.data, status=status.HTTP_200_OK)
 	else:
-		return Response(serializer.errors)
+		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 

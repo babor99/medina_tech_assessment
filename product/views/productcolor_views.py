@@ -18,6 +18,7 @@ from commons.enums import ProductPermEnum
 
 
 
+
 # Create your views here.
 
 @extend_schema(
@@ -112,7 +113,7 @@ def getAProductColorByProductId(request, product_id):
 		serializer = ProductColorListSerializer(productcolor)
 		return Response(serializer.data, status=status.HTTP_200_OK)
 	except ObjectDoesNotExist:
-		return Response({'detail': f"ProductColor for product {product_obj.name} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
+		return Response({'detail': f"ProductColor doesn't exist"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -151,7 +152,7 @@ def searchProductColor(request):
 	if len(product_colors) > 0:
 		return Response(response, status=status.HTTP_200_OK)
 	else:
-		return Response({'detail': f"There are no product_colors matching your search"}, status=status.HTTP_400_BAD_REQUEST)
+		return Response({'detail': f"There are no product_colors matching your search"}, status=status.HTTP_204_NO_CONTENT)
 
 
 

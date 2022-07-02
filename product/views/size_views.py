@@ -19,6 +19,7 @@ from commons.enums import ProductPermEnum
 
 
 
+
 # Create your views here.
 
 @extend_schema(
@@ -116,7 +117,7 @@ def searchSize(request):
 	if len(sizes) > 0:
 		return Response(response, status=status.HTTP_200_OK)
 	else:
-		return Response({'detail': f"There are no sizes matching your search"}, status=status.HTTP_400_BAD_REQUEST)
+		return Response({'detail': f"There are no sizes matching your search"}, status=status.HTTP_204_NO_CONTENT)
 
 
 

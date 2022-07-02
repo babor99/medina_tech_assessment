@@ -30,6 +30,7 @@ urlpatterns = [
 	path('size/', include('product.urls.size_urls')),
 	path('productsize/', include('product.urls.productsize_urls')),
 	path('productimage/', include('product.urls.productimage_urls')),
+	path('weather_type/', include('product.urls.weather_type_urls')),
 
 	# YOUR PATTERNS
     path('schema/', SpectacularAPIView.as_view(), name='schema'),

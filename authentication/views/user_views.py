@@ -123,9 +123,9 @@ def getAUser(request, pk):
 	try:
 		user = User.objects.get(pk=pk)
 		serializer = AdminUserSerializer(user)
-		return Response(serializer.data)
+		return Response(serializer.data, status=status.HTTP_200_OK)
 	except ObjectDoesNotExist:
-		return Response({'detail': f"User id - {pk} doesn't exists"})
+		return Response({'detail': f"User id - {pk} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -164,7 +164,7 @@ def searchUser(request):
 	if len(users) > 0:
 		return Response(response, status=status.HTTP_200_OK)
 	else:
-		return Response({'detail': f"There are no users matching your search"}, status=status.HTTP_400_BAD_REQUEST)
+		return Response({'detail': f"There are no users matching your search"}, status=status.HTTP_204_NO_CONTENT)
 
 
 
@@ -215,7 +215,7 @@ def updateUser(request, pk):
 		else:
 			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 	except ObjectDoesNotExist:
-		return Response({'detail': f"User id - {pk} doesn't exists"})
+		return Response({'detail': f"User id - {pk} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 

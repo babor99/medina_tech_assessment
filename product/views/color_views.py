@@ -130,7 +130,7 @@ def searchColor(request):
 	if len(colors) > 0:
 		return Response(response, status=status.HTTP_200_OK)
 	else:
-		return Response({'detail': f"There are no colors matching your search"}, status=status.HTTP_400_BAD_REQUEST)
+		return Response({'detail': f"There are no colors matching your search"}, status=status.HTTP_204_NO_CONTENT)
 
 
 

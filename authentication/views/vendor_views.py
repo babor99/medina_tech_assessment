@@ -128,7 +128,7 @@ def searchVendor(request):
 	if len(vendors) > 0:
 		return Response(response, status=status.HTTP_200_OK)
 	else:
-		return Response({'detail': f"There are no vendor matching your search"}, status=status.HTTP_400_BAD_REQUEST)
+		return Response({'detail': f"There are no vendor matching your search"}, status=status.HTTP_204_NO_CONTENT)
 
 
 
@@ -195,7 +195,7 @@ def updateVendor(request,pk):
 	try:
 		vendor = Vendor.objects.get(pk=int(pk))
 	except ObjectDoesNotExist:
-		return Response({'detail': f"Customer id - {pk} doesn't exists"})
+		return Response({'detail': f"Customer id - {pk} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 	if type(image) == str and image is not None:
 		poped_image = filtered_data.pop('image')
@@ -204,7 +204,7 @@ def updateVendor(request,pk):
 			serializer.save()
 			return Response(serializer.data, status=status.HTTP_200_OK)
 		else:
-			return Response(serializer.errors)
+			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 	else:
 		serializer = VendorSerializer(vendor, data=filtered_data)
 		if serializer.is_valid():

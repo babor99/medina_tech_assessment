@@ -96,7 +96,7 @@ class WeatherType(models.Model):
 
 
 class Product(models.Model):
-	name = models.CharField(max_length=255, null=True, blank=True)
+	name = models.CharField(max_length=255)
 	short_desc = models.TextField(blank=True, null=True)
 	full_desc = models.TextField(blank=True, null=True)
 	condition = models.CharField(max_length=255, null=True, blank=True)
@@ -259,4 +259,20 @@ class ProductImage(models.Model):
 
 
 
+
+
+
+class Stock(models.Model):
+	product = models.OneToOneField(Product, on_delete= models.CASCADE, related_name='product_stock')
+	quantity = models.IntegerField()
+	
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True)
+
+	created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+	updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+
+	class Meta:
+		verbose_name_plural = 'Stocks'
+		ordering = ('-id', )
 

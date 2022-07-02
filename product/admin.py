@@ -67,6 +67,12 @@ class ProductImageAdmin(admin.ModelAdmin):
 	list_per_page = 16
 
 
+@admin.register(Stock)
+class StockAdmin(admin.ModelAdmin):
+	list_display = [field.name for field in Stock._meta.fields]
+	list_per_page = 16
+
+
 
 
 
