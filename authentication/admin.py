@@ -34,9 +34,4 @@ class CountryAdmin(admin.ModelAdmin):
 	list_display = [field.name for field in Country._meta.fields]
 
 
-@admin.register(City)
-class CityAdmin(admin.ModelAdmin):
-	list_display = [field.name for field in City._meta.fields]
-
-
 admin.site.unregister(Group)

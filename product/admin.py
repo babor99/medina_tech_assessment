@@ -37,12 +37,6 @@ class DiscountAdmin(admin.ModelAdmin):
 	list_per_page = 16
 
 
-@admin.register(ProductTag)
-class ProductTagAdmin(admin.ModelAdmin):
-	list_display = [field.name for field in ProductTag._meta.fields]
-	list_per_page = 16
-
-
 @admin.register(Color)
 class ColorAdmin(admin.ModelAdmin):
 	list_display = [field.name for field in Color._meta.fields]

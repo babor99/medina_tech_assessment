@@ -10,16 +10,14 @@ from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
 from sequences import get_next_value
 
-from authentication.models import User, Vendor
+from authentication.models import Vendor
 from authentication.serializers import VendorSerializer, VendorListSerializer
 from authentication.filters import VendorFilter
 from authentication.decorators import has_permissions
 
 from commons.pagination import Pagination
-from commons.enums import PermissionEnum
+from commons.enums import AuthPermEnum
 
-import uuid
-import random
 
 
 
@@ -34,8 +32,8 @@ import random
 	responses=VendorSerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.VENDOR_LIST.name])
 def getAllVendor(request):
 	vendors = Vendor.objects.all()
 	total_elements = vendors.count()
@@ -69,8 +67,8 @@ def getAllVendor(request):
 	responses=VendorSerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.VENDOR_LIST.name])
 def getAllVendorWithoutPagination(request):
 	vendors = Vendor.objects.all()
 
@@ -83,8 +81,8 @@ def getAllVendorWithoutPagination(request):
 
 @extend_schema(request=VendorSerializer, responses=VendorSerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DETAILS.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.VENDOR_DETAILS.name])
 def getAVendor(request, pk):
 	try:
 		vendor = Vendor.objects.get(pk=pk)
@@ -98,8 +96,8 @@ def getAVendor(request, pk):
 
 @extend_schema(request=VendorSerializer, responses=VendorSerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.VENDOR_LIST.name])
 def searchVendor(request):
 	vendors = VendorFilter(request.GET, queryset=Vendor.objects.all())
 	vendors = vendors.qs
@@ -138,7 +136,7 @@ def searchVendor(request):
 @extend_schema(request=VendorSerializer, responses=VendorSerializer)
 @api_view(['POST'])
 # @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_CREATE.name])
+# @has_permissions([AuthPermEnum.VENDOR_CREATE.name])
 def createVendor(request):
 	data = request.data
 
@@ -180,7 +178,7 @@ def createVendor(request):
 @extend_schema(request=VendorSerializer, responses=VendorSerializer)
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_UPDATE.name, PermissionEnum.PERMISSION_PARTIAL_UPDATE.name])
+@has_permissions([AuthPermEnum.VENDOR_UPDATE.name, AuthPermEnum.VENDOR_PARTIAL_UPDATE.name])
 def updateVendor(request,pk):
 	data = request.data
 	print('vendor data: ', data)
@@ -221,12 +219,10 @@ def updateVendor(request,pk):
 @extend_schema(request=VendorSerializer, responses=VendorSerializer)
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DELETE.name])
+@has_permissions([AuthPermEnum.VENDOR_DELETE.name])
 def deleteVendor(request, pk):
 	try:
 		vendor = Vendor.objects.get(pk=pk)
-		ledger = LedgerAccount.objects.get(reference_id=vendor.id)
-		ledger.delete()
 		vendor.delete()
 		return Response({'detail': f'Vendor id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
 	except ObjectDoesNotExist:

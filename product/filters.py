@@ -1,3 +1,4 @@
+from unicodedata import category
 from django_filters import rest_framework as filters
 
 from product.models import *
@@ -52,12 +53,17 @@ class WeatherTypeFilter(filters.FilterSet):
 
 
 
-class ProductFilterByNameCat(filters.FilterSet):
+class ProductFilter(filters.FilterSet):
     name = filters.CharFilter(field_name="name", lookup_expr='icontains')
+    brand = filters.CharFilter(field_name='brand__name', lookup_expr='icontains')
+    category = filters.CharFilter(field_name='category__name', lookup_expr='icontains')
+    weather_type = filters.CharFilter(field_name='product_type__name', lookup_expr='icontains')
+    min_price = filters.NumberFilter(field_name='unit_price', lookup_expr='gte')
+    max_price = filters.NumberFilter(field_name='unit_price', lookup_expr='lte')
 
     class Meta:
         model = Product
-        fields = ['name', 'category' ]
+        fields = ['name', 'brand', 'category', 'weather_type', 'min_price', 'max_price' ]
 
 
 
@@ -122,16 +128,6 @@ class ProductSizeFilter(filters.FilterSet):
     class Meta:
         model = ProductSize
         fields = ['product_name',]
-
-
-
-
-class ProductTagFilter(filters.FilterSet):
-    name = filters.CharFilter(field_name="name", lookup_expr='icontains')
-
-    class Meta:
-        model = ProductTag
-        fields = ['name',]
 
 
 

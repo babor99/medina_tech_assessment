@@ -22,11 +22,29 @@ def updated_by_signals(sender, instance, created, **kwargs):
 			sender.objects.filter(id=instance.id).update(updated_by=user)
 
 
+def assign_vendor_role_signals(sender, instance, created, **kwargs):
+	if created:
+		print('inside vendor role signal')
+		role, create = Role.objects.get_or_create(name='VENDOR')
+		print('role: ', role)
+		instance.role = role
+		instance.save()
 
 
-# City signals
-post_save.connect(created_by_signals, sender=City)
-post_save.connect(updated_by_signals, sender=City)
+def assign_customer_role_signals(sender, instance, created, **kwargs):
+	if created:
+		print('inside customer role signal')
+		role, create = Role.objects.get_or_create(name='CUSTOMER')
+		print('role: ', role)
+		instance.role = role
+		instance.save()
+
+
+# assign role for vendor and customer
+post_save.connect(assign_vendor_role_signals, sender=Vendor)
+post_save.connect(assign_customer_role_signals, sender=Customer)
+
+
 
 
 # Country signals

@@ -1,3 +1,4 @@
+from itertools import product
 from os import stat
 from platform import release
 from turtle import RawTurtle
@@ -25,9 +26,7 @@ from commons.pagination import Pagination
 from commons import constants
 from commons.enums import ProductPermEnum
 
-from itertools import chain
 import requests
-
 
 
 
@@ -97,51 +96,34 @@ def getAllProductOfUserLocWeather(request):
 )
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-@has_permissions([ProductPermEnum.PRODUCT_DETAILS.name])
-def getAllProduct(request):
-	products = Product.objects.all()
-	total_elements = products.count()
+# @has_permissions([ProductPermEnum.PRODUCT_LIST.name])
+def getAllProductOfVendor(request):
+	user = request.user
+	if user.user_type == 'vendor':
+		products = Product.objects.filter(vendor=user)
+		total_elements = products.count()
 
-	page = request.query_params.get('page')
-	size = request.query_params.get('size')
+		page = request.query_params.get('page')
+		size = request.query_params.get('size')
 
-	# Pagination
-	pagination = Pagination()
-	pagination.page = page
-	pagination.size = size
-	products = pagination.paginate_data(products)
+		# Pagination
+		pagination = Pagination()
+		pagination.page = page
+		pagination.size = size
+		products = pagination.paginate_data(products)
 
-	serializer = ProductListSerializer(products, many=True)
+		serializer = ProductListSerializer(products, many=True)
 
-	response = {
-		'products': serializer.data,
-		'page': pagination.page,
-		'size': pagination.size,
-		'total_pages': pagination.total_pages,
-		'total_elements': total_elements,
-	}
-	return Response(response, status=status.HTTP_200_OK)
-
-
-
-
-@extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
-  ],
-	request=ProductSerializer,
-	responses=ProductSerializer
-)
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-@has_permissions([ProductPermEnum.PRODUCT_LIST.name])
-def getAllProductWithoutPagination(request):
-	products = Product.objects.all()
-
-	serializer = ProductListSerializer(products, many=True)
-
-	return Response({'products': serializer.data}, status=status.HTTP_200_OK)
+		response = {
+			'products': serializer.data,
+			'page': pagination.page,
+			'size': pagination.size,
+			'total_pages': pagination.total_pages,
+			'total_elements': total_elements,
+		}
+		return Response(response, status=status.HTTP_200_OK)
+	else:
+		return Response({'detail': f"{user.first_name} is not a vendor account. Please login with vendor account."}, status=status.HTTP_403_FORBIDDEN)
 
 
 
@@ -150,14 +132,17 @@ def getAllProductWithoutPagination(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 @has_permissions([ProductPermEnum.PRODUCT_DETAILS.name])
-def getAProduct(request, pk):
-	try:
-		product = Product.objects.get(pk=pk)
-		serializer = ProductListSerializer(product)
-	
-		return Response(serializer.data, status=status.HTTP_200_OK)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"Product id - {pk} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
+def getAProductOfVendor(request, pk):
+	user = request.user
+	if user.user_type == 'vendor':
+		try:
+			product = Product.objects.get(vendor=user, pk=pk)
+			serializer = ProductListSerializer(product)
+			return Response(serializer.data, status=status.HTTP_200_OK)
+		except ObjectDoesNotExist:
+			return Response({'detail': f"Product id - {pk} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
+	else:
+		return Response({'detail': f"{user.first_name} is not a vendor account. Please login with vendor account."}, status=status.HTTP_403_FORBIDDEN)
 
 
 
@@ -166,119 +151,8 @@ def getAProduct(request, pk):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 @has_permissions([ProductPermEnum.PRODUCT_LIST.name])
-def getAllProductUsingCategory(request, category_id):
-	category_obj = Category.objects.get(pk=int(category_id))
-	products = Product.objects.filter(category=category_obj)
-
-	total_elements = products.count()
-
-	page = request.query_params.get('page')
-	size = request.query_params.get('size')
-
-	# Pagination
-	pagination = Pagination()
-	pagination.page = page
-	pagination.size = size
-	products = pagination.paginate_data(products)
-
-	serializer = ProductListSerializer(products, many=True)
-
-	response = {
-		'products': serializer.data,
-		'page': pagination.page,
-		'size': pagination.size,
-		'total_pages': pagination.total_pages,
-		'total_elements': total_elements,
-	}
-
-	return Response(response, status=status.HTTP_200_OK)
-
-
-
-
-@extend_schema(request=ProductSerializer, responses=ProductSerializer)
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-@has_permissions([ProductPermEnum.PRODUCT_LIST.name])
-def getAllProductUsingCategoryNested(request, category_id):
-
-	category_obj = Category.objects.filter(pk=category_id)
-	first_childs = Category.objects.filter(parent__in=category_obj)
-	second_childs = Category.objects.filter(parent__in=first_childs)
-	print('category: ', category_obj)
-	print('first_childs: ', first_childs)
-	print('second_childs: ', second_childs)
-
-	chained_categories = list(chain(category_obj, first_childs, second_childs))
-	print('chained_categories: ', chained_categories)
-
-	products = Product.objects.filter(category__in=chained_categories)
-
-	total_elements = products.count()
-
-	page = request.query_params.get('page')
-	size = request.query_params.get('size')
-
-	# Pagination
-	pagination = Pagination()
-	pagination.page = page
-	pagination.size = size
-	products = pagination.paginate_data(products)
-
-	serializer = ProductListSerializer(products, many=True)
-
-	response = {
-		'products': serializer.data,
-		'page': pagination.page,
-		'size': pagination.size,
-		'total_pages': pagination.total_pages,
-		'total_elements': total_elements,
-	}
-
-	return Response(response, status=status.HTTP_200_OK)
-
-
-
-
-@extend_schema(request=ProductSerializer, responses=ProductSerializer)
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-@has_permissions([ProductPermEnum.PRODUCT_LIST.name])
-def getAllProductUsingBrand(request, brand_id):
-	products = Product.objects.filter(brand__id=brand_id)
-
-	total_elements = products.count()
-
-	page = request.query_params.get('page')
-	size = request.query_params.get('size')
-
-	# Pagination
-	pagination = Pagination()
-	pagination.page = page
-	pagination.size = size
-	products = pagination.paginate_data(products)
-
-	serializer = ProductListSerializer(products, many=True)
-
-	response = {
-		'products': serializer.data,
-		'page': pagination.page,
-		'size': pagination.size,
-		'total_pages': pagination.total_pages,
-		'total_elements': total_elements,
-	}
-
-	return Response(response, status=status.HTTP_200_OK)
-
-
-
-
-@extend_schema(request=ProductSerializer, responses=ProductSerializer)
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-@has_permissions([ProductPermEnum.PRODUCT_LIST.name])
-def searchProduct(request):
-	searched_products = ProductFilter(request.GET, queryset=Product.objects.all())
+def searchVendorProduct(request):
+	searched_products = ProductFilter(request.GET, queryset=Product.objects.filter(vendor=request.user))
 	searched_products = searched_products.qs
 
 	print('searched_products: ', searched_products)
@@ -316,7 +190,7 @@ def searchProduct(request):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 @has_permissions([ProductPermEnum.PRODUCT_CREATE.name])
-def createProduct(request):
+def createVendorProduct(request):
 	data = request.data
 	print('data: ', data)
 	filtered_data = {}
@@ -344,13 +218,13 @@ def createProduct(request):
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 @has_permissions([ProductPermEnum.PRODUCT_UPDATE.name])
-def updateProduct(request,pk):
+def updateVendorProduct(request,pk):
 	data = request.data
 	print('product data: ', data)
 	filtered_data = {}
-	
+
 	try:
-		product = Product.objects.get(pk=pk)
+		product = Product.objects.get(vendor=request.user, pk=pk)
 	except ObjectDoesNotExist:
 		return Response({'detail': f"Product id - {pk} doesn't exists"})
 
@@ -358,16 +232,15 @@ def updateProduct(request,pk):
 		if value != '' and value != 0 and value != '0':
 			filtered_data[key] = value
 
-		
 	thumbnail = filtered_data.get('thumbnail', None)
 
 	if thumbnail and type(thumbnail) == str:
 		popped_thumbnail = filtered_data.pop('thumbnail')
 
 	print('filtered_data: ', filtered_data)
-	
+
 	serializer = ProductSerializer(product, data=filtered_data)
-	
+
 	if serializer.is_valid():
 		serializer.save()
 		return Response(serializer.data, status=status.HTTP_200_OK)
@@ -381,13 +254,14 @@ def updateProduct(request,pk):
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
 @has_permissions([ProductPermEnum.PRODUCT_DELETE.name])
-def deleteProduct(request, pk):
-	try:
-		product = Product.objects.get(pk=pk)
-		product.delete()
-		return Response({'detail': f'Product id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"Product id - {pk} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
-
-
-
+def deleteVendorProduct(request, pk):
+	user = request.user
+	if user.user_type == 'vendor':
+		try:
+			product = Product.objects.get(vendor=user, pk=pk)
+			product.delete()
+			return Response({'detail': f'Product id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
+		except ObjectDoesNotExist:
+			return Response({'detail': f"Product id - {pk} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
+	else:
+		return Response({'detail': "You don't own this product to delete."}, status=status.HTTP_403_FORBIDDEN)

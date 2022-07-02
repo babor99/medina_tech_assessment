@@ -9,13 +9,9 @@ urlpatterns = [
 
 	path('api/v1/product/all/', views.getAllProduct), #pagination done
 
-	path('api/v1/product/all_product_of_individual_vendor/', views.getAllProductOfIndividualVendor), #pagination done
-
 	path('api/v1/product/without_pagination/all/', views.getAllProductWithoutPagination),
 
 	path('api/v1/product/<int:pk>', views.getAProduct),
-
-	path('api/v1/product/a_product_of_individual_vendor/<int:pk>', views.getAProductOfIndividualVendor),
 
 	path('api/v1/product_using_category/<int:category_id>', views.getAllProductUsingCategory), #pagination done
 
@@ -24,8 +20,6 @@ urlpatterns = [
 	path('api/v1/product_using_brand/<int:brand_id>', views.getAllProductUsingBrand), #pagination done
 
 	path('api/v1/product/search/', views.searchProduct), #pagination done
-
-	path('api/v1/product/filter/', views.filterProduct), #pagination done
 
 	path('api/v1/product/create/', views.createProduct),
 

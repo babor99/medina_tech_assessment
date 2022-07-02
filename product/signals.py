@@ -43,11 +43,6 @@ post_save.connect(created_by_signals, sender=Discount)
 post_save.connect(updated_by_signals, sender=Discount)
 
 
-# ProductTag signals
-post_save.connect(created_by_signals, sender=ProductTag)
-post_save.connect(updated_by_signals, sender=ProductTag)
-
-
 # Color signals
 post_save.connect(created_by_signals, sender=Color)
 post_save.connect(updated_by_signals, sender=Color)

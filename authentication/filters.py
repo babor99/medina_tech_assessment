@@ -5,16 +5,6 @@ from django_filters import rest_framework as filters
 
 # Filters
 
-class CityFilter(filters.FilterSet):
-    name = filters.CharFilter(field_name="name", lookup_expr='icontains')
-
-    class Meta:
-        model = City
-        fields = ['name', ]
-
-
-
-
 class CountryFilter(filters.FilterSet):
     name = filters.CharFilter(field_name="name", lookup_expr='icontains')
 

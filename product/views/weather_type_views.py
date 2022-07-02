@@ -7,11 +7,14 @@ from rest_framework.response import Response
 
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
+from authentication.decorators import has_permissions
+
 from product.models import WeatherType
 from product.serializers import WeatherTypeSerializer, WeatherTypeListSerializer
 from product.filters import WeatherTypeFilter
 
 from commons.pagination import Pagination
+from commons.enums import ProductPermEnum
 
 
 
@@ -27,6 +30,8 @@ from commons.pagination import Pagination
 	responses=WeatherTypeSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.WEATHER_TYPE_LIST.name])
 def getAllWeatherType(request):
 	weather_types = WeatherType.objects.all()
 	total_elements = weather_types.count()
@@ -64,6 +69,8 @@ def getAllWeatherType(request):
 	responses=WeatherTypeSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.WEATHER_TYPE_LIST.name])
 def getAllWeatherTypeWithoutPagination(request):
 	weather_types = WeatherType.objects.all()
 
@@ -76,6 +83,8 @@ def getAllWeatherTypeWithoutPagination(request):
 
 @extend_schema(request=WeatherTypeSerializer, responses=WeatherTypeSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.WEATHER_TYPE_DETAILS.name])
 def getAWeatherType(request, pk):
 	try:
 		weather_type = WeatherType.objects.get(pk=pk)
@@ -89,6 +98,8 @@ def getAWeatherType(request, pk):
 
 @extend_schema(request=WeatherTypeSerializer, responses=WeatherTypeSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.WEATHER_TYPE_LIST.name])
 def searchWeatherType(request):
 	weather_types = WeatherTypeFilter(request.GET, queryset=WeatherType.objects.all())
 	weather_types = weather_types.qs
@@ -126,6 +137,8 @@ def searchWeatherType(request):
 
 @extend_schema(request=WeatherTypeSerializer, responses=WeatherTypeSerializer)
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.WEATHER_TYPE_CREATE.name])
 def createWeatherType(request):
 	data = request.data
 	itered_data = {}
@@ -155,6 +168,8 @@ def createWeatherType(request):
 
 @extend_schema(request=WeatherTypeSerializer, responses=WeatherTypeSerializer)
 @api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.WEATHER_TYPE_UPDATE.name])
 def updateWeatherType(request,pk):
 	data = request.data
 	print('data: ', data)
@@ -185,6 +200,8 @@ def updateWeatherType(request,pk):
 
 @extend_schema(request=WeatherTypeSerializer, responses=WeatherTypeSerializer)
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.WEATHER_TYPE_DELETE.name])
 def deleteWeatherType(request, pk):
 	try:
 		weather_type = WeatherType.objects.get(pk=pk)

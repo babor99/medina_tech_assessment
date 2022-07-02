@@ -13,8 +13,6 @@ urlpatterns = [
 
 	path('api/v1/brand/search/', views.searchBrand), #pagination done
 
-	path('api/v1/brand/featured_brand/all/', views.getAllFeaturedBrand), #pagination done
-
 	path('api/v1/brand/create/', views.createBrand),
 
 	path('api/v1/brand/update/<int:pk>', views.updateBrand),

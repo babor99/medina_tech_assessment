@@ -1,3 +1,4 @@
+from itertools import product
 from django.core.exceptions import ObjectDoesNotExist
 
 from rest_framework import serializers, status
@@ -7,12 +8,14 @@ from rest_framework.response import Response
 
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
+from authentication.decorators import has_permissions
+
 from product.models import Size
 from product.serializers import SizeSerializer, SizeListSerializer
 from product.filters import SizeFilter
 
 from commons.pagination import Pagination
-
+from commons.enums import ProductPermEnum
 
 
 
@@ -27,6 +30,8 @@ from commons.pagination import Pagination
 	responses=SizeSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.SIZE_LIST.name])
 def getAllSize(request):
 	_sizes = Size.objects.all()
 	total_elements = _sizes.count()
@@ -65,6 +70,8 @@ def getAllSize(request):
 	responses=SizeSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.SIZE_LIST.name])
 def getAllSizeWithoutPagination(request):
 	sizes = Size.objects.all()
 
@@ -77,6 +84,8 @@ def getAllSizeWithoutPagination(request):
 
 @extend_schema(request=SizeSerializer, responses=SizeSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.SIZE_LIST.name])
 def searchSize(request):
 	sizes = SizeFilter(request.GET, queryset=Size.objects.all())
 	sizes = sizes.qs
@@ -114,6 +123,8 @@ def searchSize(request):
 
 @extend_schema(request=SizeSerializer, responses=SizeSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.SIZE_DETAILS.name])
 def getASize(request, pk):
 	try:
 		_size = Size.objects.get(pk=pk)
@@ -127,6 +138,8 @@ def getASize(request, pk):
 
 @extend_schema(request=SizeSerializer, responses=SizeSerializer)
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.SIZE_CREATE.name])
 def createSize(request):
 	data = request.data
 	print('data: ', data)
@@ -149,6 +162,8 @@ def createSize(request):
 
 @extend_schema(request=SizeSerializer, responses=SizeSerializer)
 @api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.SIZE_UPDATE.name])
 def updateSize(request, pk):
 	data = request.data
 	print('data: ', data)
@@ -174,6 +189,8 @@ def updateSize(request, pk):
 
 @extend_schema(request=SizeSerializer, responses=SizeSerializer)
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.SIZE_DELETE.name])
 def deleteSize(request, pk):
 	try:
 		_size = Size.objects.get(pk=pk)

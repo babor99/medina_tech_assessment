@@ -19,13 +19,12 @@ urlpatterns = [
 	path('role/', include('authentication.urls.role_urls')),
 	path('permission/', include('authentication.urls.permission_urls')),
 	path('country/', include('authentication.urls.country_urls')),
-	path('city/', include('authentication.urls.city_urls')),
 
 	# Product Module
 	path('product/', include('product.urls.product_urls')),
+	path('vendor_product/', include('product.urls.vendor_product_urls')),
 	path('category/', include('product.urls.category_urls')),
 	path('brand/', include('product.urls.brand_urls')),
-	path('producttag/', include('product.urls.producttag_urls')),
 	path('color/', include('product.urls.color_urls')),
 	path('productcolor/', include('product.urls.productcolor_urls')),
 	path('size/', include('product.urls.size_urls')),

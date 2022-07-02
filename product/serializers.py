@@ -331,14 +331,52 @@ class WeatherTypeSerializer(serializers.ModelSerializer):
 
 
 
+class WeatherTypeMinimalSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = WeatherType
+		fields = ['id', 'name']
+
+
+
+class ColorMinimalSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Color
+		fields = ['name']
+
+
+
+class ProductColorMinimalSerializer(serializers.ModelSerializer):
+	color = ColorMinimalSerializer(many=True)
+	class Meta:
+		model = ProductColor
+		fields = ['color']
+
+
+
+class SizeMinimalSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Size
+		fields = ['name']
+
+
+
+class ProductSizeMinimalSerializer(serializers.ModelSerializer):
+	size = SizeMinimalSerializer(many=True)
+	class Meta:
+		model = ProductSize
+		fields = ['size']
+
+
+
+
 class ProductListSerializer(serializers.ModelSerializer):
 	brand = BrandMinimalListSerializer()
 	category = CategoryMinimalListSerializer()
 	vendor = AdminUserMinimalListSerializer()
+	product_type = WeatherTypeMinimalSerializer()
+	product_color = ProductColorMinimalSerializer()
+	product_size = ProductSizeMinimalSerializer()
 	verified_by = AdminUserMinimalListSerializer()
-	created_by = AdminUserMinimalListSerializer()
-	updated_by = AdminUserMinimalListSerializer()
-
 	class Meta:
 		model = Product
 		fields = '__all__'
@@ -524,69 +562,6 @@ class DiscountListSerializer(serializers.ModelSerializer):
 class DiscountSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Discount
-		fields = '__all__'
-		extra_kwargs = {
-			'created_at':{
-				'read_only': True,
-			},
-			'updated_at':{
-				'read_only': True,
-			},
-			'created_by':{
-				'read_only': True,
-			},
-			'updated_by':{
-				'read_only': True,
-			},
-		}
-		
-	def create(self, validated_data):
-		modelObject = super().create(validated_data=validated_data)
-		user = get_current_authenticated_user()
-		if user is not None:
-			modelObject.created_by = user
-		modelObject.save()
-		return modelObject
-	
-	def update(self, instance, validated_data):
-		modelObject = super().update(instance=instance, validated_data=validated_data)
-		user = get_current_authenticated_user()
-		if user is not None:
-			modelObject.updated_by = user
-		modelObject.save()
-		return modelObject
-	
-
-
-
-class ProductTagListSerializer(serializers.ModelSerializer):
-	product = ProductMinimalListSerializer()
-	created_by = AdminUserMinimalListSerializer()
-	updated_by = AdminUserMinimalListSerializer()
-	class Meta:
-		model = ProductTag
-		fields = '__all__'
-		extra_kwargs = {
-			'created_at':{
-				'read_only': True,
-			},
-			'updated_at':{
-				'read_only': True,
-			},
-			'created_by':{
-				'read_only': True,
-			},
-			'updated_by':{
-				'read_only': True,
-			},
-		}
-		
-
-
-
-class ProductTagSerializer(serializers.ModelSerializer):
-	class Meta:
-		model = ProductTag
 		fields = '__all__'
 		extra_kwargs = {
 			'created_at':{

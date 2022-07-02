@@ -7,12 +7,14 @@ from rest_framework.response import Response
 
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
+from authentication.decorators import has_permissions
+
 from product.models import Brand, Color
 from product.serializers import ColorSerializer, ColorListSerializer
 from product.filters import ColorFilter
 
 from commons.pagination import Pagination
-
+from commons.enums import ProductPermEnum
 
 
 
@@ -28,6 +30,8 @@ from commons.pagination import Pagination
 	responses=ColorSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.COLOR_LIST.name])
 def getAllColor(request):
 	colors = Color.objects.all()
 	total_elements = colors.count()
@@ -65,6 +69,8 @@ def getAllColor(request):
 	responses=ColorSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.COLOR_LIST.name])
 def getAllColorWithoutPagination(request):
 	colors = Color.objects.all()
 
@@ -77,6 +83,8 @@ def getAllColorWithoutPagination(request):
 
 @extend_schema(request=ColorSerializer, responses=ColorSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.COLOR_DETAILS.name])
 def getAColor(request, pk):
 	try:
 		color = Color.objects.get(pk=pk)
@@ -90,6 +98,8 @@ def getAColor(request, pk):
 
 @extend_schema(request=ColorSerializer, responses=ColorSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.COLOR_LIST.name])
 def searchColor(request):
 	colors = ColorFilter(request.GET, queryset=Color.objects.all())
 	colors = colors.qs
@@ -127,6 +137,8 @@ def searchColor(request):
 
 @extend_schema(request=ColorSerializer, responses=ColorSerializer)
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.COLOR_CREATE.name])
 def createColor(request):
 	data = request.data
 	print('data: ', data)
@@ -149,6 +161,8 @@ def createColor(request):
 
 @extend_schema(request=ColorSerializer, responses=ColorSerializer)
 @api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.COLOR_UPDATE.name])
 def updateColor(request,pk):
 	data = request.data
 	print('data: ', data)
@@ -174,6 +188,8 @@ def updateColor(request,pk):
 
 @extend_schema(request=ColorSerializer, responses=ColorSerializer)
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.COLOR_DELETE.name])
 def deleteColor(request, pk):
 	try:
 		color = Color.objects.get(pk=pk)

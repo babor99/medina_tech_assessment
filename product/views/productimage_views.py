@@ -7,12 +7,14 @@ from rest_framework.response import Response
 
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
+from authentication.decorators import has_permissions
+
 from product.models import Product, ProductImage, Brand, Color
 from product.serializers import ProductImageSerializer, ProductImageListSerializer
 from product.filters import ProductImageFilter
 
 from commons.pagination import Pagination
-
+from commons.enums import ProductPermEnum
 
 
 
@@ -27,6 +29,8 @@ from commons.pagination import Pagination
 	responses=ProductImageSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_IMAGE_LIST.name])
 def getAllProductImage(request):
 	product_images = ProductImage.objects.all()
 	total_elements = product_images.count()
@@ -64,6 +68,8 @@ def getAllProductImage(request):
 	responses=ProductImageSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_IMAGE_LIST.name])
 def getAllProductImageByProductId(request, product_id):
 	try:
 		product_obj = Product.objects.get(pk=int(product_id))
@@ -99,6 +105,8 @@ def getAllProductImageByProductId(request, product_id):
 
 @extend_schema(request=ProductImageSerializer, responses=ProductImageSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_IMAGE_DETAILS.name])
 def getAProductImage(request, pk):
 	try:
 		product_images = ProductImage.objects.get(pk=pk)
@@ -112,6 +120,8 @@ def getAProductImage(request, pk):
 
 @extend_schema(request=ProductImageSerializer, responses=ProductImageSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_IMAGE_LIST.name])
 def searchProductImage(request):
 	product_images = ProductImageFilter(request.GET, queryset=ProductImage.objects.all())
 	product_images = product_images.qs
@@ -149,6 +159,8 @@ def searchProductImage(request):
 
 @extend_schema(request=ProductImageSerializer, responses=ProductImageSerializer)
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_IMAGE_CREATE.name])
 def createProductImage(request):
 	data = request.data
 	print('data: ', data)
@@ -171,6 +183,8 @@ def createProductImage(request):
 
 @extend_schema(request=ProductImageSerializer, responses=ProductImageSerializer)
 @api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_IMAGE_UPDATE.name])
 def updateProductImage(request, pk):
 	data = request.data
 	print('data: ', data)
@@ -196,6 +210,8 @@ def updateProductImage(request, pk):
 
 @extend_schema(request=ProductImageSerializer, responses=ProductImageSerializer)
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_IMAGE_DELETE.name])
 def deleteProductImage(request, pk):
 	try:
 		product_image = ProductImage.objects.get(pk=pk)

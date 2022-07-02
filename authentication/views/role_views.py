@@ -1,17 +1,19 @@
 from django.core.exceptions import ObjectDoesNotExist
 
 from rest_framework import serializers, status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
 
 from authentication.models import Role
 from authentication.serializers import RoleSerializer, RoleListSerializer
 from authentication.filters import RoleFilter
+from authentication.decorators import has_permissions
 
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
+
 from commons.pagination import Pagination
-
-
+from commons.enums import AuthPermEnum
 
 
 # Create your views here.
@@ -25,8 +27,8 @@ from commons.pagination import Pagination
 	responses=RoleSerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST_VIEW.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.ROLE_LIST.name])
 def getAllRole(request):
 	roles = Role.objects.all()
 	total_elements = roles.count()
@@ -64,8 +66,8 @@ def getAllRole(request):
 	responses=RoleSerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST_VIEW.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.ROLE_LIST.name])
 def getAllRoleWithoutPagination(request):
 	roles = Role.objects.all()
 
@@ -78,6 +80,8 @@ def getAllRoleWithoutPagination(request):
 
 @extend_schema(request=RoleSerializer, responses=RoleSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.ROLE_DETAILS.name])
 def getARole(request, pk):
 	try:
 		role = Role.objects.get(pk=pk)
@@ -91,10 +95,9 @@ def getARole(request, pk):
 
 @extend_schema(request=RoleSerializer, responses=RoleSerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PRODUCT_DETAILS.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.ROLE_LIST.name])
 def searchRole(request):
-
 	roles = RoleFilter(request.GET, queryset=Role.objects.all())
 	roles = roles.qs
 
@@ -131,6 +134,8 @@ def searchRole(request):
 
 @extend_schema(request=RoleSerializer, responses=RoleSerializer)
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.ROLE_CREATE.name])
 def createRole(request):
 	data = request.data
 	print('data: ', data)
@@ -164,6 +169,8 @@ def createRole(request):
 
 @extend_schema(request=RoleSerializer, responses=RoleSerializer)
 @api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.ROLE_UPDATE.name])
 def updateRole(request,pk):
 	data = request.data
 	filtered_data = {}
@@ -188,6 +195,8 @@ def updateRole(request,pk):
 
 @extend_schema(request=RoleSerializer, responses=RoleSerializer)
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.ROLE_DELETE.name])
 def deleteRole(request, pk):
 	try:
 		role = Role.objects.get(pk=pk)

@@ -7,12 +7,14 @@ from rest_framework.response import Response
 
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
+from authentication.decorators import has_permissions
+
 from product.models import Brand
 from product.serializers import BrandSerializer, BrandListSerializer
 from product.filters import BrandFilter
 
 from commons.pagination import Pagination
-
+from commons.enums import ProductPermEnum
 
 
 
@@ -27,6 +29,8 @@ from commons.pagination import Pagination
 	responses=BrandSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.BRAND_LIST.name])
 def getAllBrand(request):
 	brands = Brand.objects.all()
 	total_elements = brands.count()
@@ -64,6 +68,8 @@ def getAllBrand(request):
 	responses=BrandSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.BRAND_LIST.name])
 def getAllBrandWithoutPagination(request):
 	brands = Brand.objects.all()
 
@@ -76,6 +82,8 @@ def getAllBrandWithoutPagination(request):
 
 @extend_schema(request=BrandSerializer, responses=BrandSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.BRAND_DETAILS.name])
 def getABrand(request, pk):
 	try:
 		brand = Brand.objects.get(pk=pk)
@@ -89,39 +97,8 @@ def getABrand(request, pk):
 
 @extend_schema(request=BrandSerializer, responses=BrandSerializer)
 @api_view(['GET'])
-def getAllFeaturedBrand(request):
-	brands = Brand.objects.filter(is_featured_brand=True)
-	total_elements = brands.count()
-
-	page = request.query_params.get('page')
-	size = request.query_params.get('size')
-
-	# Pagination
-	pagination = Pagination()
-	pagination.page = page
-	pagination.size = size
-	brands = pagination.paginate_data(brands)
-
-	serializer = BrandListSerializer(brands, many=True)
-
-	response = {
-		'brands': serializer.data,
-		'page': pagination.page,
-		'size': pagination.size,
-		'total_pages': pagination.total_pages,
-		'total_elements': total_elements,
-	}
-
-	if len(brands) > 0:
-		return Response(response, status=status.HTTP_200_OK)
-	else:
-		return Response({'detail': f"There are no featured brands."}, status=status.HTTP_400_BAD_REQUEST)
-
-
-
-
-@extend_schema(request=BrandSerializer, responses=BrandSerializer)
-@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.BRAND_LIST.name])
 def searchBrand(request):
 	brands = BrandFilter(request.GET, queryset=Brand.objects.all())
 	brands = brands.qs
@@ -159,6 +136,8 @@ def searchBrand(request):
 
 @extend_schema(request=BrandSerializer, responses=BrandSerializer)
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.BRAND_CREATE.name])
 def createBrand(request):
 	data = request.data
 	itered_data = {}
@@ -188,6 +167,8 @@ def createBrand(request):
 
 @extend_schema(request=BrandSerializer, responses=BrandSerializer)
 @api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.BRAND_UPDATE.name])
 def updateBrand(request,pk):
 	data = request.data
 	print('data: ', data)
@@ -218,6 +199,8 @@ def updateBrand(request,pk):
 
 @extend_schema(request=BrandSerializer, responses=BrandSerializer)
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.BRAND_DELETE.name])
 def deleteBrand(request, pk):
 	try:
 		brand = Brand.objects.get(pk=pk)

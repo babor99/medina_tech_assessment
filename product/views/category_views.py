@@ -7,12 +7,14 @@ from rest_framework.response import Response
 
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
+from authentication.decorators import has_permissions
+
 from product.models import Brand, Category, Product
 from product.serializers import BrandSerializer, CategorySerializer, CategoryCustomSerializer, CategoryTreeSerializer, CategoryListSerializer, ProductListSerializer, ProductSerializer
 from product.filters import CategoryFilter
 
 from commons.pagination import Pagination
-
+from commons.enums import ProductPermEnum
 
 
 
@@ -27,6 +29,8 @@ from commons.pagination import Pagination
 	responses=CategorySerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.CATEGORY_LIST.name])
 def getAllCategory(request):
 	categories = Category.objects.all()
 	total_elements = categories.count()
@@ -64,6 +68,8 @@ def getAllCategory(request):
 	responses=CategorySerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.CATEGORY_LIST.name])
 def getAllParentCategoryWithoutPagination(request):
 	categories = Category.objects.filter(parent__isnull=True)
 
@@ -79,57 +85,12 @@ def getAllParentCategoryWithoutPagination(request):
 
 
 @extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
-  ],
 	request=CategorySerializer,
 	responses=CategorySerializer
 )
 @api_view(['GET'])
-def getAllSubCategoryByCategoryIdWithoutPagination(request, pk):
-	categories = Category.objects.filter(parent__id=pk)
-
-	serializer = CategoryListSerializer(categories, many=True)
-
-	response = {
-		'sub_categories': serializer.data,
-	}
-
-	return Response(response, status=status.HTTP_200_OK)
-
-
-
-
-@extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
-  ],
-	request=CategorySerializer,
-	responses=CategorySerializer
-)
-@api_view(['GET'])
-def getAllSubSubCategoryByCategoryIdWithoutPagination(request, pk):
-	categories = Category.objects.filter(parent__id=pk)
-
-	serializer = CategoryListSerializer(categories, many=True)
-
-	response = {
-		'sub_sub_categories': serializer.data,
-	}
-
-	return Response(response, status=status.HTTP_200_OK)
-
-
-
-
-@extend_schema(
-
-	request=CategorySerializer,
-	responses=CategorySerializer
-)
-@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.CATEGORY_LIST.name])
 def getAllCategoryWithoutPagination(request):
 	categories = Category.objects.all()
 
@@ -142,6 +103,8 @@ def getAllCategoryWithoutPagination(request):
 
 @extend_schema(request=CategoryListSerializer, responses=CategoryListSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.CATEGORY_DETAILS.name])
 def getACategory(request, pk):
 	try:
 		category = Category.objects.get(pk=pk)
@@ -155,6 +118,8 @@ def getACategory(request, pk):
 
 @extend_schema(request=CategorySerializer, responses=CategorySerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.CATEGORY_LIST.name])
 def searchCategory(request):
 	categories = CategoryFilter(request.GET, queryset=Category.objects.all())
 	categories = categories.qs
@@ -192,6 +157,8 @@ def searchCategory(request):
 
 @extend_schema(request=CategorySerializer, responses=CategorySerializer)
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.CATEGORY_CREATE.name])
 def createCategory(request):
 	data = request.data
 	filtered_data = {}
@@ -216,6 +183,8 @@ def createCategory(request):
 
 @extend_schema(request=CategorySerializer, responses=CategorySerializer)
 @api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.CATEGORY_UPDATE.name])
 def updateCategory(request, pk):
 	data = request.data
 	print('category data: ', data)
@@ -253,6 +222,8 @@ def updateCategory(request, pk):
 
 @extend_schema(request=CategorySerializer, responses=CategorySerializer)
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.CATEGORY_DELETE.name])
 def deleteCategory(request, pk):
 	try:
 		category = Category.objects.get(pk=pk)

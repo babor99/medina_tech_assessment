@@ -17,7 +17,7 @@ from authentication.filters import CustomerFilter
 from authentication.decorators import has_permissions
 
 from commons.pagination import Pagination
-from commons.enums import PermissionEnum
+from commons.enums import AuthPermEnum
 
 import uuid
 import random
@@ -37,8 +37,8 @@ import random
 	responses=CustomerSerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.CUSTOMER_LIST.name])
 def getAllCustomer(request):
 	customers = Customer.objects.all()
 	total_elements = customers.count()
@@ -72,8 +72,8 @@ def getAllCustomer(request):
 	responses=CustomerSerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.CUSTOMER_LIST.name])
 def getAllCustomerWithoutPagination(request):
 	customers = Customer.objects.all()
 
@@ -86,8 +86,8 @@ def getAllCustomerWithoutPagination(request):
 
 @extend_schema(request=CustomerSerializer, responses=CustomerSerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PRODUCT_DETAILS.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.CUSTOMER_LIST.name])
 def searchCustomer(request):
 
 	customers = CustomerFilter(request.GET, queryset=Customer.objects.all())
@@ -126,8 +126,8 @@ def searchCustomer(request):
 
 @extend_schema(request=CustomerSerializer, responses=CustomerSerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DETAILS.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.CUSTOMER_DETAILS.name])
 def getACustomer(request, pk):
 	try:
 		customer = Customer.objects.get(pk=pk)
@@ -141,8 +141,8 @@ def getACustomer(request, pk):
 
 @extend_schema(request=CustomerSerializer, responses=CustomerSerializer)
 @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_CREATE.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.CUSTOMER_CREATE.name])
 def createCustomer(request):
 	data = request.data
 	print('data: ', data)
@@ -152,25 +152,18 @@ def createCustomer(request):
 	current_datetime = timezone.now()
 	current_datetime = str(current_datetime)
 	print('current_datetime str: ', current_datetime)
-		
+
 	for key, value in data.items():
 		if value != '' and value != 0 and value != '0' and value != 'undefined':
 			customer_data_dict[key] = value
 
 	first_name = customer_data_dict.get('first_name', 'random')
 	username = customer_data_dict.get('username', None)
-	email = customer_data_dict.get('email', None)
-	primary_phone = customer_data_dict.get('primary_phone', None)
 
 	if not username:
 		username = str(first_name) + str(get_next_value('sequential_user'))
 		customer_data_dict['username'] = username
 
-	email_token = uuid.uuid4().hex
-	phone_otp = random.randint(123456, 987654)
-
-	customer_data_dict['email_token'] = str(email_token)
-	customer_data_dict['phone_otp'] = phone_otp
 	customer_data_dict['last_login'] = current_datetime
 	customer_data_dict['user_type'] = 'customer'
 
@@ -188,7 +181,7 @@ def createCustomer(request):
 @extend_schema(request=CustomerSerializer, responses=CustomerSerializer)
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_UPDATE.name, PermissionEnum.PERMISSION_PARTIAL_UPDATE.name])
+@has_permissions([AuthPermEnum.CUSTOMER_UPDATE.name, AuthPermEnum.CUSTOMER_PARTIAL_UPDATE.name])
 def updateCustomer(request, pk):
 	data = request.data
 	print('customer data: ', data)
@@ -216,19 +209,17 @@ def updateCustomer(request, pk):
 		return Response(serializer.data, status=status.HTTP_200_OK)
 	else:
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-	
+
 
 
 
 @extend_schema(request=CustomerSerializer, responses=CustomerSerializer)
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DELETE.name])
+@has_permissions([AuthPermEnum.CUSTOMER_DELETE.name])
 def deleteCustomer(request, pk):
 	try:
 		customer = Customer.objects.get(pk=pk)
-		ledger = LedgerAccount.objects.get(reference_id=customer.id)
-		ledger.delete()
 		customer.delete()
 		return Response({'detail': f'Customer id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
 	except ObjectDoesNotExist:

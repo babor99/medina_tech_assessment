@@ -7,12 +7,14 @@ from rest_framework.response import Response
 
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
+from authentication.decorators import has_permissions
+
 from product.models import Product, ProductColor
 from product.serializers import ProductColorSerializer, ProductColorListSerializer
 from product.filters import ProductColorFilter
 
 from commons.pagination import Pagination
-
+from commons.enums import ProductPermEnum
 
 
 
@@ -27,6 +29,8 @@ from commons.pagination import Pagination
 	responses=ProductColorSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_COLOR_LIST.name])
 def getAllProductColor(request):
 	productcolors = ProductColor.objects.all()
 	total_elements = productcolors.count()
@@ -64,6 +68,8 @@ def getAllProductColor(request):
 	responses=ProductColorSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_COLOR_LIST.name])
 def getAllProductColorByProductId(request, product_id):
 	try:
 		product_obj = Product.objects.get(pk=product_id)
@@ -81,6 +87,8 @@ def getAllProductColorByProductId(request, product_id):
 
 @extend_schema(request=ProductColorSerializer, responses=ProductColorSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_COLOR_DETAILS.name])
 def getAProductColor(request, pk):
 	try:
 		productcolor = ProductColor.objects.get(pk=pk)
@@ -94,16 +102,12 @@ def getAProductColor(request, pk):
 
 @extend_schema(request=ProductColorSerializer, responses=ProductColorSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_COLOR_DETAILS.name])
 def getAProductColorByProductId(request, product_id):
 
 	try:
-		product_obj = Product.objects.get(pk=int(product_id))
-		print('product_obj: ', product_obj)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"Product id - {product_id} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
-
-	try:
-		productcolor = ProductColor.objects.get(product=product_obj)
+		productcolor = ProductColor.objects.get(product__id=product_id)
 		print('productcolor: ', productcolor)
 		serializer = ProductColorListSerializer(productcolor)
 		return Response(serializer.data, status=status.HTTP_200_OK)
@@ -115,6 +119,8 @@ def getAProductColorByProductId(request, product_id):
 
 @extend_schema(request=ProductColorSerializer, responses=ProductColorSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_COLOR_LIST.name])
 def searchProductColor(request):
 	product_colors = ProductColorFilter(request.GET, queryset=ProductColor.objects.all())
 	product_colors = product_colors.qs
@@ -152,6 +158,8 @@ def searchProductColor(request):
 
 @extend_schema(request=ProductColorSerializer, responses=ProductColorSerializer)
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_COLOR_CREATE.name])
 def createProductColor(request):
 	data = request.data
 	print('data: ', data)
@@ -174,6 +182,8 @@ def createProductColor(request):
 
 @extend_schema(request=ProductColorSerializer, responses=ProductColorSerializer)
 @api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_COLOR_UPDATE.name])
 def updateProductColor(request,pk):
 	data = request.data
 	print('data: ', data)
@@ -199,6 +209,8 @@ def updateProductColor(request,pk):
 
 @extend_schema(request=ProductColorSerializer, responses=ProductColorSerializer)
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_COLOR_DELETE.name])
 def deleteProductColor(request, pk):
 	try:
 		productcolor = ProductColor.objects.get(pk=pk)

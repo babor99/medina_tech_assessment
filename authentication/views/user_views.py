@@ -22,7 +22,7 @@ from authentication.models import Permission
 from authentication.serializers import (AdminUserSerializer, PasswordChangeSerializer, AdminUserListSerializer)
 from authentication.filters import UserFilter
 
-from commons.enums import PermissionEnum
+from commons.enums import AuthPermEnum
 from commons.pagination import Pagination
 
 
@@ -65,7 +65,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
 )
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST.name])
+@has_permissions([AuthPermEnum.USER_LIST.name])
 def getAllUser(request):
 	users = User.objects.all()
 	total_elements = users.count()
@@ -104,7 +104,7 @@ def getAllUser(request):
 )
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST.name])
+@has_permissions([AuthPermEnum.USER_LIST.name])
 def getAllUserWithoutPagination(request):
 	users = User.objects.all()
 
@@ -118,7 +118,7 @@ def getAllUserWithoutPagination(request):
 @extend_schema(request=AdminUserSerializer, responses=AdminUserSerializer)
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.USER_DETAILS.name])
+@has_permissions([AuthPermEnum.USER_DETAILS.name])
 def getAUser(request, pk):
 	try:
 		user = User.objects.get(pk=pk)
@@ -133,7 +133,7 @@ def getAUser(request, pk):
 @extend_schema(request=AdminUserListSerializer, responses=AdminUserListSerializer)
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
+@has_permissions([AuthPermEnum.USER_LIST.name])
 def searchUser(request):
 	users = UserFilter(request.GET, queryset=User.objects.all())
 	users = users.qs
@@ -171,8 +171,8 @@ def searchUser(request):
 
 @extend_schema(request=AdminUserSerializer, responses=AdminUserSerializer)
 @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.USER_CREATE.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.USER_CREATE.name])
 def createUser(request):
 	data = request.data
 
@@ -203,7 +203,7 @@ def createUser(request):
 @extend_schema(request=AdminUserSerializer, responses=AdminUserSerializer)
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.USER_UPDATE.name, PermissionEnum.USER_PARTIAL_UPDATE.name])
+@has_permissions([AuthPermEnum.USER_UPDATE.name, AuthPermEnum.USER_PARTIAL_UPDATE.name])
 def updateUser(request, pk):
 	try:
 		user = User.objects.get(pk=pk)
@@ -223,7 +223,7 @@ def updateUser(request, pk):
 @extend_schema(request=AdminUserSerializer, responses=AdminUserSerializer)
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.USER_DELETE.name])
+@has_permissions([AuthPermEnum.USER_DELETE.name])
 def deleteUser(request, pk):
 	try:
 		user = User.objects.get(pk=pk)
@@ -238,6 +238,8 @@ def deleteUser(request, pk):
 
 @extend_schema(request=PasswordChangeSerializer)
 @api_view(['PATCH'])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.USER_UPDATE, AuthPermEnum.USER_PARTIAL_UPDATE])
 def userPasswordChange(request, pk):
 	try:
 		user = User.objects.get(pk=pk)
@@ -261,12 +263,13 @@ def userPasswordChange(request, pk):
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.USER_UPDATE, AuthPermEnum.USER_PARTIAL_UPDATE])
 def userImageUpload(request, pk):
 	try:
 		user = User.objects.get(pk=pk)
 		data = request.data
 		# image = 
-
 		if 'image' in data:
 			print( "================>" ,data, data['image'], type(data['image']))
 			user.image = data['image']

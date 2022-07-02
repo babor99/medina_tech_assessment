@@ -12,7 +12,7 @@ from authentication.models import Country
 from authentication.serializers import CountrySerializer, CountryListSerializer
 from authentication.filters import CountryFilter
 
-from commons.enums import PermissionEnum
+from commons.enums import AuthPermEnum
 from commons.pagination import Pagination
 
 
@@ -29,8 +29,8 @@ from commons.pagination import Pagination
 	responses=CountrySerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST_VIEW.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.COUNTRY_LIST.name])
 def getAllCountry(request):
 	countries = Country.objects.all()
 	total_elements = countries.count()
@@ -68,8 +68,8 @@ def getAllCountry(request):
 	responses=CountrySerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST_VIEW.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.COUNTRY_LIST.name])
 def getAllCountryWithoutPagination(request):
 	countries = Country.objects.all()
 
@@ -82,8 +82,8 @@ def getAllCountryWithoutPagination(request):
 
 @extend_schema(request=CountrySerializer, responses=CountrySerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.COUNTRY_DETAILS.name])
 def getACountry(request, pk):
 	try:
 		country = Country.objects.get(pk=pk)
@@ -97,8 +97,8 @@ def getACountry(request, pk):
 
 @extend_schema(request=CountrySerializer, responses=CountrySerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.COUNTRY_LIST.name])
 def searchCountry(request):
 	countries = CountryFilter(request.GET, queryset=Country.objects.all())
 	countries = countries.qs
@@ -137,7 +137,7 @@ def searchCountry(request):
 @extend_schema(request=CountrySerializer, responses=CountrySerializer)
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_CREATE.name])
+@has_permissions([AuthPermEnum.COUNTRY_CREATE.name])
 def createCountry(request):
 	data = request.data
 	filtered_data = {}
@@ -160,7 +160,7 @@ def createCountry(request):
 @extend_schema(request=CountrySerializer, responses=CountrySerializer)
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_UPDATE.name, PermissionEnum.PERMISSION_PARTIAL_UPDATE.name])
+@has_permissions([AuthPermEnum.COUNTRY_UPDATE.name])
 def updateCountry(request,pk):
 	data = request.data
 	filtered_data = {}
@@ -186,7 +186,7 @@ def updateCountry(request,pk):
 @extend_schema(request=CountrySerializer, responses=CountrySerializer)
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DELETE.name])
+@has_permissions([AuthPermEnum.COUNTRY_DELETE.name])
 def deleteCountry(request, pk):
 	try:
 		country = Country.objects.get(pk=pk)

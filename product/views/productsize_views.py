@@ -8,12 +8,14 @@ from rest_framework.response import Response
 
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
+from authentication.decorators import has_permissions
+
 from product.models import Product, ProductSize
 from product.serializers import ProductSizeSerializer, ProductSizeListSerializer
 from product.filters import ProductSizeFilter
 
 from commons.pagination import Pagination
-
+from commons.enums import ProductPermEnum
 
 
 
@@ -28,6 +30,8 @@ from commons.pagination import Pagination
 	responses=ProductSizeSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_SIZE_LIST.name])
 def getAllProductSize(request):
 	_productsizes = ProductSize.objects.all()
 	total_elements = _productsizes.count()
@@ -65,6 +69,8 @@ def getAllProductSize(request):
 	responses=ProductSizeSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_SIZE_LIST.name])
 def getAllProductSizeByProductId(request, product_id):
 	try:
 		product_obj = Product.objects.get(pk=product_id)
@@ -82,6 +88,8 @@ def getAllProductSizeByProductId(request, product_id):
 
 @extend_schema(request=ProductSizeSerializer, responses=ProductSizeSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_SIZE_DETAILS.name])
 def getAProductSize(request, pk):
 	try:
 		_productsize = ProductSize.objects.get(pk=pk)
@@ -95,6 +103,8 @@ def getAProductSize(request, pk):
 
 @extend_schema(request=ProductSizeSerializer, responses=ProductSizeSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_SIZE_DETAILS.name])
 def getAProductSizeByProductId(request, product_id):
 	try:
 		product_obj = Product.objects.get(pk=int(product_id))
@@ -113,6 +123,8 @@ def getAProductSizeByProductId(request, product_id):
 
 @extend_schema(request=ProductSizeSerializer, responses=ProductSizeSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_SIZE_LIST.name])
 def searchProductSize(request):
 	product_sizes = ProductSizeFilter(request.GET, queryset=ProductSize.objects.all())
 	product_sizes = product_sizes.qs
@@ -150,6 +162,8 @@ def searchProductSize(request):
 
 @extend_schema(request=ProductSizeSerializer, responses=ProductSizeSerializer)
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_SIZE_CREATE.name])
 def createProductSize(request):
 	data = request.data
 	print('data: ', data)
@@ -172,6 +186,8 @@ def createProductSize(request):
 
 @extend_schema(request=ProductSizeSerializer, responses=ProductSizeSerializer)
 @api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_SIZE_UPDATE.name])
 def updateProductSize(request,pk):
 	data = request.data
 	print('data: ', data)
@@ -198,6 +214,8 @@ def updateProductSize(request,pk):
 
 @extend_schema(request=ProductSizeSerializer, responses=ProductSizeSerializer)
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.PRODUCT_SIZE_DELETE.name])
 def deleteProductSize(request, pk):
 	try:
 		_productsize = ProductSize.objects.get(pk=pk)

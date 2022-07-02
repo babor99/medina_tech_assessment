@@ -22,6 +22,8 @@ class Country(models.Model):
 	currency_code = models.CharField(max_length=255, null=True, blank=True)
 	continent_name = models.CharField(max_length=255, null=True, blank=True)
 	continent_code = models.CharField(max_length=255, null=True, blank=True)
+	lat = models.IntegerField(null=True, blank=True)
+	lon = models.IntegerField(null=True, blank=True)
 
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
@@ -32,34 +34,6 @@ class Country(models.Model):
 	class Meta:
 		verbose_name_plural = 'Countries'
 		ordering = ('-id',)
-
-	def __str__(self):
-		return self.name
-	
-	def save(self, *args, **kwargs):
-		self.name = self.name.capitalize()
-		super().save(*args, **kwargs)
-
-
-
-
-class City(models.Model):
-	name = models.CharField(max_length=50)
-	country = models.ForeignKey(Country, on_delete= models.RESTRICT, related_name='cities')
-	bn_name = models.CharField(max_length=50, null=True, blank=True)
-	lat = models.CharField(max_length=255, null=True, blank=True)
-	lon = models.CharField(max_length=255, null=True, blank=True)
-	url = models.CharField(max_length=500, null=True, blank=True)
-
-	created_at = models.DateTimeField(auto_now_add=True)
-	updated_at = models.DateTimeField(auto_now=True)
-
-	created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
-	updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
-
-	class Meta:
-		verbose_name_plural = 'Cities'
-		ordering = ('-id', )
 
 	def __str__(self):
 		return self.name
@@ -169,7 +143,6 @@ class User(AbstractBaseUser):
 
 	role = models.ForeignKey(Role, on_delete=models.SET_NULL, null=True, blank=True)
 	country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True, blank=True)
-	city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True, blank=True)
 	postal_code = models.CharField(max_length=50, null=True, blank=True)
 
 	is_active = models.BooleanField(default=True)

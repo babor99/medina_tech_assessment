@@ -391,94 +391,8 @@ class CountrySerializer(serializers.ModelSerializer):
 
 
 
-class CityListSerializer(serializers.ModelSerializer):
-	country = CountryMinimalListSerializer()
-	created_by = AdminUserMinimalListSerializer()
-	updated_by = AdminUserMinimalListSerializer()
-	class Meta:
-		model = City
-		fields = '__all__'
-		extra_kwargs = {
-			'created_at':{
-				'read_only': True,
-			},
-			'updated_at':{
-				'read_only': True,
-			},
-			'created_by':{
-				'read_only': True,
-			},
-			'updated_by':{
-				'read_only': True,
-			},
-		}
-		
-
-
-
-class CityMinimalListSerializer(serializers.ModelSerializer):
-	class Meta:
-		model = City
-		fields = ['id', 'name']
-		extra_kwargs = {
-			'created_at':{
-				'read_only': True,
-			},
-			'updated_at':{
-				'read_only': True,
-			},
-			'created_by':{
-				'read_only': True,
-			},
-			'updated_by':{
-				'read_only': True,
-			},
-		}
-
-
-
-
-class CitySerializer(serializers.ModelSerializer):
-	class Meta:
-		model = City
-		fields = '__all__'
-		extra_kwargs = {
-			'created_at':{
-				'read_only': True,
-			},
-			'updated_at':{
-				'read_only': True,
-			},
-			'created_by':{
-				'read_only': True,
-			},
-			'updated_by':{
-				'read_only': True,
-			},
-		}
-		
-	def create(self, validated_data):
-		modelObject = super().create(validated_data=validated_data)
-		user = get_current_authenticated_user()
-		if user is not None:
-			modelObject.created_by = user
-		modelObject.save()
-		return modelObject
-	
-	def update(self, instance, validated_data):
-		modelObject = super().update(instance=instance, validated_data=validated_data)
-		user = get_current_authenticated_user()
-		if user is not None:
-			modelObject.updated_by = user
-		modelObject.save()
-		return modelObject
-
-
-
-
 class VendorListSerializer(serializers.ModelSerializer):
 	role = RoleMinimalListSerializer()
-	city = CityMinimalListSerializer()
 	country = CountryMinimalListSerializer()
 	created_by = AdminUserMinimalListSerializer()
 	updated_by = AdminUserMinimalListSerializer()
@@ -560,7 +474,6 @@ class VendorSerializer(serializers.ModelSerializer):
 
 class CustomerListSerializer(serializers.ModelSerializer):
 	role = RoleMinimalListSerializer()
-	city = CityMinimalListSerializer()
 	country = CountryMinimalListSerializer()
 	created_by = AdminUserMinimalListSerializer()
 	updated_by = AdminUserMinimalListSerializer()

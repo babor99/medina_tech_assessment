@@ -8,11 +8,14 @@ from rest_framework.response import Response
 
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
+from authentication.decorators import has_permissions
+
 from product.models import Discount
 from product.serializers import DiscountSerializer, DiscountListSerializer
 from product.filters import DiscountFilter
 
 from commons.pagination import Pagination
+from commons.enums import ProductPermEnum
 
 
 
@@ -28,6 +31,8 @@ from commons.pagination import Pagination
 	responses=DiscountSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.DISCOUNT_LIST.name])
 def getAllDiscount(request):
 	_discounts = Discount.objects.all()
 	total_elements = _discounts.count()
@@ -66,6 +71,8 @@ def getAllDiscount(request):
 	responses=DiscountSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.DISCOUNT_LIST.name])
 def getAllDiscountWithoutPagination(request):
 	discounts = Discount.objects.all()
 
@@ -85,6 +92,8 @@ def getAllDiscountWithoutPagination(request):
 	responses=DiscountSerializer
 )
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.DISCOUNT_DETAILS.name])
 def getADiscountByProductId(request, product_id):
 	try:
 		discount = Discount.objects.get(product__id=product_id)
@@ -100,6 +109,8 @@ def getADiscountByProductId(request, product_id):
 
 @extend_schema(request=DiscountSerializer, responses=DiscountSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.DISCOUNT_DETAILS.name])
 def getADiscount(request, pk):
 	try:
 		discount = Discount.objects.get(pk=pk)
@@ -113,6 +124,8 @@ def getADiscount(request, pk):
 
 @extend_schema(request=DiscountSerializer, responses=DiscountSerializer)
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.DISCOUNT_LIST.name])
 def searchDiscount(request):
 	discounts = DiscountFilter(request.GET, queryset=Discount.objects.all())
 	discounts = discounts.qs
@@ -150,6 +163,8 @@ def searchDiscount(request):
 
 @extend_schema(request=DiscountSerializer, responses=DiscountSerializer)
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.DISCOUNT_CREATE.name])
 def createDiscount(request):
 	data = request.data
 	print('data: ', data)
@@ -186,6 +201,8 @@ def createDiscount(request):
 
 @extend_schema(request=DiscountSerializer, responses=DiscountSerializer)
 @api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.DISCOUNT_UPDATE.name])
 def updateDiscount(request, pk):
 	data = request.data
 	print('data: ', data)
@@ -229,6 +246,8 @@ def updateDiscount(request, pk):
 
 @extend_schema(request=DiscountSerializer, responses=DiscountSerializer)
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+@has_permissions([ProductPermEnum.DISCOUNT_DELETE.name])
 def deleteDiscount(request, pk):
 	try:
 		discount = Discount.objects.get(pk=pk)

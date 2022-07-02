@@ -12,7 +12,7 @@ from authentication.models import Permission
 from authentication.serializers import PermissionSerializer, PermissionListSerializer
 from authentication.filters import PermissionFilter
 
-from commons.enums import PermissionEnum
+from commons.enums import AuthPermEnum
 from commons.pagination import Pagination
 
 
@@ -29,8 +29,8 @@ from commons.pagination import Pagination
 	responses=PermissionSerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.PERMISSION_LIST.name])
 def getAllPermission(request):
 	permissions = Permission.objects.all()
 	total_elements = permissions.count()
@@ -68,8 +68,8 @@ def getAllPermission(request):
 	responses=PermissionSerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.PERMISSION_LIST.name])
 def getAllPermissionWithoutPagination(request):
 	permissions = Permission.objects.all()
 
@@ -82,8 +82,8 @@ def getAllPermissionWithoutPagination(request):
 
 @extend_schema(request=PermissionSerializer, responses=PermissionSerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DETAILS.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.PERMISSION_DETAILS.name])
 def getAPermission(request, pk):
 	try:
 		permission = Permission.objects.get(pk=pk)
@@ -97,8 +97,8 @@ def getAPermission(request, pk):
 
 @extend_schema(request=PermissionSerializer, responses=PermissionSerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PRODUCT_DETAILS.name])
+@permission_classes([IsAuthenticated])
+@has_permissions([AuthPermEnum.PERMISSION_LIST.name])
 def searchPermission (request):
 
 	permissions = PermissionFilter(request.GET, queryset=Permission .objects.all())
@@ -138,7 +138,7 @@ def searchPermission (request):
 @extend_schema(request=PermissionSerializer, responses=PermissionSerializer)
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_CREATE.name])
+@has_permissions([AuthPermEnum.PERMISSION_CREATE.name])
 def createPermission(request):
 	data = request.data
 	filtered_data = {}
@@ -170,7 +170,7 @@ def createPermission(request):
 @extend_schema(request=PermissionSerializer, responses=PermissionSerializer)
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_UPDATE.name, PermissionEnum.PERMISSION_PARTIAL_UPDATE.name])
+@has_permissions([AuthPermEnum.PERMISSION_UPDATE.name, AuthPermEnum.PERMISSION_PARTIAL_UPDATE.name])
 def updatePermission(request,pk):
 	data = request.data
 	filtered_data = {}
@@ -197,7 +197,7 @@ def updatePermission(request,pk):
 @extend_schema(request=PermissionSerializer, responses=PermissionSerializer)
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DELETE.name])
+@has_permissions([AuthPermEnum.PERMISSION_DELETE.name])
 def deletePermission(request, pk):
 	try:
 		permission = Permission.objects.get(pk=pk)

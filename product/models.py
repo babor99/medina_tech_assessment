@@ -159,30 +159,6 @@ class Discount(models.Model):
 
 
 
-class ProductTag(models.Model):
-	name = models.CharField(max_length=255)
-	product = models.ForeignKey(Product, on_delete= models.SET_NULL, null=True, blank=True)
-
-	created_at = models.DateTimeField(auto_now_add=True)
-	updated_at = models.DateTimeField(auto_now=True)
-
-	created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
-	updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
-
-	class Meta:
-		verbose_name_plural = 'ProductTags'
-		ordering = ('-id', )
-
-	def __str__(self):
-		return self.name
-	
-	def save(self, *args, **kwargs):
-		self.name = self.name.title()
-		super().save(*args, **kwargs)
-
-
-
-
 class Color(models.Model):
 	name = models.CharField(max_length=255)
 
@@ -206,7 +182,7 @@ class Color(models.Model):
 
 
 class ProductColor(models.Model):
-	product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True)
+	product = models.OneToOneField(Product, on_delete=models.CASCADE, related_name='product_color', null=True, blank=True)
 	color = models.ManyToManyField(Color, blank=True)
 
 	created_at = models.DateTimeField(auto_now_add=True)
@@ -248,7 +224,7 @@ class Size(models.Model):
 
 
 class ProductSize(models.Model):
-	product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True)
+	product = models.OneToOneField(Product, on_delete=models.CASCADE, related_name='product_size', null=True, blank=True)
 	size = models.ManyToManyField(Size, blank=True)
 
 	created_at = models.DateTimeField(auto_now_add=True)
